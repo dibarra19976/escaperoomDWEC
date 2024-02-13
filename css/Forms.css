@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  position: absolute;
+}
+
+.form {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  gap: 20px;
+  font-family: "Raleway", sans-serif;
+  /*   font-family: "Philosopher", sans-serif; */
+}
+
+.form h1 {
+  text-align: center;
+  width: 100%;
+  padding-block: 20px;
+}
+
+.form label {
+  font-weight: 700;
+  font-size: 16pt;
+}
+.form input[type="text"],
+.form input[type="password"] {
+  height: 30px;
+  color: white;
+  background: none;
+  border: none;
+  border-bottom: 3px rgb(80, 80, 80) solid;
+  transition: 0.2s;
+  outline: none;
+  width: 100%;
+  font-size: 12pt;
+}
+
+.form input[type="text"]:focus,
+.form input[type="password"]:focus {
+  width: 100%;
+  border-bottom: 3px rgb(255, 255, 255) solid;
+}
+
+.form button {
+  color: black;
+  background-color: white;
+  border: none;
+  padding: 20px;
+  font-size: 20pt;
+  font-family: "Raleway", sans-serif;
+  transition: 0.2s;
+}
+
+.form button:hover {
+  background-color: black;
+  outline: 2px solid white;
+  color: white;
+  font-weight: 700;
+}
+
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+:root{
+  --correct: #2ecc71;
+  --error: #e74c3c;
+}
+
+.form-control{
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control.correct input{
+  border-color: var(--correct);
+  
+}
+.form-control.correct label{
+  color:  var( --correct);
+}
+.form-control.error label{
+  color:  var( --error);
+}
+.form-control.error input{
+  border-color: var( --error);
+}
+
+.form-control small{
+  color:  var( --error);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+
+.form-control.error small{
+  visibility: visible;
+}
+
+

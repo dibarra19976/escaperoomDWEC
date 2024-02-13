@@ -1,0 +1,13 @@
+https://coolors.co/ffaf87-ff8e72-ed6a5e-4ce0b3-377771
+
+06-02
+REGISTER Y LOGIN (css html)
+
+07-02
+memory empezado
+(generacion de cartas)
+
+12-03
+memory logica casi hecha
+falta hacer que el card disable funcione bien
+

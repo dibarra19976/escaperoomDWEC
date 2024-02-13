@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+/* font-family: 'IBM Plex Mono', monospace; */
+
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/*   font-family: "Philosopher", sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+/*  font-family: "Raleway", sans-serif;*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+}
+
+.Main {
+  display: flex;
+  flex-direction: column;
+}
+
+.Main .logo {
+  width: 100%;
+  text-align: right;
+}
+
+.menu ul {
+  width: 100%;
+  font-family: "IBM Plex Mono", monospace;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 30px;
+}
+
+.menu li {
+  font-size: 30px;
+  transition: 0.1s;
+  margin-block: 55px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.menu li:hover {
+  transform: translateX(15px);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e6d700, 0 0 40px #e6e600,
+    0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e6cf00;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  padding-block: 10px;
+  background-color: #ffffff1b;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  transition: 0.2s;
+  padding-inline: 10px;
+  font-size: 20px;
+}
+
+.nav a:hover {
+  font-weight: 900;
+}
+
+.nav .left {
+  margin-right: auto;
+}
+
+.nav .right {
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

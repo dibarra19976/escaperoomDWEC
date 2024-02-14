@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/Main.css" />
     <link rel="stylesheet" href="/css/Forms.css" />
-    <title>LogIn</title>
+    <title>Inicio de sesion</title>
   </head>
   <body>
     <!-- NavBar -->
@@ -16,15 +16,30 @@
     </div>
     <!-- Form -->
     <div class="container">
-      <form class="form" action="">
-        <h1>Log In</h1>
-        <label for="user">User Name or Email</label>
-        <input type="text" name="user" id="user" />
-        <label for="password">Password</label>
-        <input type="password" name="password" id="" />
-        <span class="error hidden">Error!</span>
+      <div class="form hidden" id="popup">
+        <h1>Ya has iniciado sesion</h1>
+        <button id="index">Volver a inicio</button>
+        <hr>
+        <button id="logout">Cerrar sesion</button>
+      </div>
+      <form class="form" id="form">
+        <h1>Inicio de sesion</h1>
+        <div class="form-control">
+          <label for="email"> Email</label>
+          <input type="text" name="email" id="email" />
+          <small>Missatge d'error</small>
+        </div>
+        <div class="form-control">
+          <label for="password">Contraseña</label>
+          <input type="password" name="password" id="password" />
+          <small>Missatge d'error</small>
+        </div>
+        <div class="hidevisibility" id="bottom">
+          <span class="center">El correo o la contraseña no son correctos</span>
+        </div>
         <button>Log In</button>
       </form>
     </div>
+    <script src="/js/LogIn.js"></script>
   </body>
 </html>

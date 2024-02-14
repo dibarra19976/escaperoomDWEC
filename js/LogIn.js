@@ -1,8 +1,5 @@
-const form = document.getElementById("form");
-const user = document.getElementById("user");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-const passwordRepeat = document.getElementById("passwordRepeat");
 
 const popup = document.getElementById("popup");
 const index = document.getElementById("index");
@@ -14,32 +11,28 @@ let users;
 
 window.onload = (event) => {
   let logged = localStorage.getItem("loggedUser");
-  if (logged !== null  ) {
+  if (logged !== null) {
     form.classList.add("hidden");
     popup.classList.remove("hidden");
   }
 };
 
 index.addEventListener("click", (e) => {
-    window.location.href = "/Index.html";
+  window.location.href = "/Index.html";
 });
 
 logout.addEventListener("click", (e) => {
-    localStorage.removeItem("loggedUser");
-    location.reload(); 
+  localStorage.removeItem("loggedUser");
+  location.reload();
 });
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  checkLength(user, 3, 15);
-  checkLength(password, 6, 25);
-  checkLength(passwordRepeat, 6, 25);
+  checkLength(password, 6, 25);  
   checkValidEmail(email);
-  checkUniqueEmail(email);
-  checkSamePassword(password, passwordRepeat);
-  checkRequired([user, email, password, passwordRepeat]);
+  checkRequired([email, password]);
 
-  register();
+  logIn();
 });
 
 //FUNCIONES DE COMPROBACION
@@ -61,15 +54,6 @@ function checkLength(input, min, max) {
   }
 }
 
-function checkSamePassword(input1, input2) {
-  if (input1.value !== input2.value) {
-    let missatge = `La segunda contraseña no es igual`;
-    showError(input2, missatge);
-  } else {
-    showCorrect(input2);
-  }
-}
-
 function checkValidEmail(input) {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -81,11 +65,10 @@ function checkValidEmail(input) {
   }
 }
 
-function checkUniqueEmail(input) {
+function emailExists(input) {
   getUserArray();
-  if (users.hasOwnProperty(input.value.trim())) {
-    showError(input, "El correo ya esta en uso");
-  }
+  return (users.hasOwnProperty(input.value.trim()));
+  
 }
 
 //FUNCIONES PARA MOSTRAR INFORMACION
@@ -107,11 +90,6 @@ function showCorrect(input) {
 
 //FUNCIONES PARA EL MANEJO DE USUARIOS
 
-function updateUsers() {
-  let json = JSON.stringify(users);
-  localStorage.setItem("users", json);
-}
-
 function getUserArray() {
   let json = localStorage.getItem("users");
   if (json === null || json === "") {
@@ -121,17 +99,22 @@ function getUserArray() {
   users = JSON.parse(json);
 }
 
-function register() {
+//Funcion para Iniciar Sesion
+
+function logIn() {
   let errors = document.querySelectorAll(".error").length;
+  let bottom = document.getElementById("bottom");
   if (errors === 0) {
     getUserArray();
-    users[email.value] = {
-      email: email.value,
-      user: user.value,
-      password: password.value,
-    };
-    updateUsers();
-    localStorage.setItem("loggedUser", JSON.stringify(users[email.value]));
-    window.location.href = "/Index.html";
+    if (emailExists(email) && users[email.value.trim()]["password"] === password.value.trim() ) {
+      bottom.className = " hidden";
+      localStorage.setItem("loggedUser", JSON.stringify(users[email.value]));
+      window.location.href = "/Index.html";
+    }
+    else{
+      bottom.className = " ";
+      showError(email, "");
+      showError(password, "");  
+    }
   }
 }

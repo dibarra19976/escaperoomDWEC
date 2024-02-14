@@ -116,3 +116,14 @@
 }
 
 
+#bottom {
+  color:  var( --error);
+  text-align: center ;  
+  font-weight: 700;
+  font-size: 12pt;
+  padding-bottom: 14px;
+}
+
+.hidevisibility{
+  visibility: hidden;
+}

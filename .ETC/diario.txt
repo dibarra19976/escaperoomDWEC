@@ -11,3 +11,15 @@ memory empezado
 memory logica casi hecha
 falta hacer que el card disable funcione bien
 
+13-03 
+probar el sistema de popups para mostrar los distintos juegos
+
+14-04
+
+19-05 
+minijuego de acertar el timing
+falta crear los distintos patrones
+falta hacer una funcin para indicar que el juego se ha acabado
+falta hacer una funcion de pausa
+falta moverlo a gametest 
+    

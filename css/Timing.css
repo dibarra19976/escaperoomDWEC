@@ -1,0 +1,31 @@
+#gameElement,
+.popup {
+  width: 100%;
+}
+
+.game {
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 60px;
+  border-radius: 30px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameElement {
+  height: 200px;
+  width: 100%;
+  background-color: rgb(63, 63, 63);
+}
+
+.red {
+
+    background-color: rgb(154, 0, 0);
+}
+
+.green {
+
+    background-color: rgb(62, 154, 0);
+}

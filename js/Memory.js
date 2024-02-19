@@ -53,6 +53,7 @@ function startMemory(max) {
             flippedCards[i].classList.remove("card-flipped");
             setTimeout(function () {
               flippedCards[i].parentElement.classList.add("glow");
+              removeDisable(allCards);
             }, 600);
           }
 
@@ -67,8 +68,8 @@ function startMemory(max) {
             showText("You guessed it wrong", msg);
             setTimeout(function () {
               flippedCards[i].classList.remove("card-flipped");
+              removeDisable(allCards);
             }, 600);
-            removeDisable(allCards);
 
           }
         }
@@ -110,4 +111,5 @@ function showText(string, element) {
     element.classList.add("hide");
   }, 2000);
 }
-startMemory(10);
+
+// startMemory(10);

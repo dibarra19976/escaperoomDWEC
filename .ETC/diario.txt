@@ -23,3 +23,10 @@ falta hacer una funcin para indicar que el juego se ha acabado
 falta hacer una funcion de pausa
 falta moverlo a gametest 
     
+
+
+
+
+creditos
+sonidos https://pixabay.com/sound-effects/search/game/?pagi=3
+fuentes google 

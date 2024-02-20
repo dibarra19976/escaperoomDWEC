@@ -136,7 +136,7 @@ function startTiming(pattern, id) {
   }
 }
 
-startTiming(3, 12);
+startTiming(4, 12);
 
 function pause() {
   clearInterval(elcrono);

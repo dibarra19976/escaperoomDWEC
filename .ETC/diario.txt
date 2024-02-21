@@ -25,6 +25,10 @@ falta moverlo a gametest
     
 
 
+20-05 
+timing con 4 dificultades/patrones
+audio del minijuego mejorado
+
 
 
 creditos

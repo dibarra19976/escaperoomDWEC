@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/Main.css" />
     <link rel="stylesheet" href="/css/Memory.css" />
+    <link rel="stylesheet" href="/css/Timing.css" />
     <link rel="stylesheet" href="/css/Games.css" />
     <title>Game Test</title>
   </head>
@@ -12,6 +13,7 @@
     <div class="container">
       <div class="popup" id="panel">
         <button id="iniciar" onclick="openMinigame(1)">Iniciar memory</button>
+        <button id="iniciar" onclick="openMinigame(2)">Iniciar timing</button>
       </div>
       <div class="popup closed" id="games">
         <button id="backButton" onclick="goBack()">BACK</button>
@@ -24,7 +26,9 @@
         <div id="timing" class="">
           <div class="content">
             <div class="game">
-              <div class="gameElement"></div>
+              <div class="gameElement" id="gameElement">
+                
+              </div>
             </div>
           </div>
         </div>
@@ -32,13 +36,32 @@
       </div>
     </div>
     <script src="/js/Memory.js"></script>
+    <script src="/js/Timing.js"></script>
     <script>
+      let gamesObj = {
+        1 : {
+          "type" : "memory",
+          "difficulty" : 12,
+          "beaten" : false
+        },
+        2 : {
+          "type" : "memory",
+          "difficulty" : 12,
+          "beaten" : false
+        },
+      }
       let minigameOpen = false;
       let memoryStarted = false;
+
       const games = document.getElementById("games");
       const panel = document.getElementById("panel");
+      let timing = document.getElementById("timing");
+      let  memory = document.getElementById("memory");
 
       function openMinigame(num) {
+        memory.classList.add("closed");
+        timing.classList.add("closed");
+
         if (!minigameOpen) {
           games.classList.remove("closed");
           panel.classList.add("closed");
@@ -46,7 +69,6 @@
         }
         switch (num) {
           case 1:
-            const memory = document.getElementById("memory");
             memory.classList.remove("closed");
             if (!memoryStarted) {
               startMemory(19);
@@ -54,12 +76,16 @@
             }
             break;
           case 2:
+          timing.classList.remove("closed");
+          startTiming(4, 12, false);
+
             break;
         }
       }
 
       function goBack() {
         if (minigameOpen) {
+          pause();
           games.classList.add("closed");
           panel.classList.remove("closed");
           minigameOpen = false;

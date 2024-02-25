@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/Main.css" />
     <link rel="stylesheet" href="/css/Timing.css" />
-    <link rel="stylesheet" href="/css/Games.css">
+    <link rel="stylesheet" href="/css/Games.css" />
     <title>Timing Test</title>
   </head>
   <body>
     <div class="container">
       <div class="popup" id="games">
+        <div id="ended">
+          <p>Ya has completado esta prueba.</p>
+          <button id="backButton" onclick="goBack()">BACK</button>
+        </div>
         <div id="timing" class="">
           <div class="content">
             <div class="game">
-              <div class="gameElement" id="gameElement">
-                
-              </div>
+              <div class="gameElement" id="gameElement"></div>
             </div>
           </div>
         </div>

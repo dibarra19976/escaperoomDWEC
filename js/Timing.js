@@ -1,10 +1,15 @@
+//DEPENDENCIAS
+//Games.js
+//Sounds.js
+
 let elcrono;
 let TimingStarted = false;
-let beep = new Audio("/sounds/Timing/beep.mp3");
-let hitBeep = new Audio("/sounds/Timing/hit-beep.mp3");
-let secondBeep = new Audio("/sounds/Timing/secondbeep.mp3");
 
-function startTiming(pattern, id, clear) {
+function startTiming(game) {
+  let clear = game.beaten;
+  let id = game.id;
+  let pattern = game.difficulty;
+
   if (!clear) {
     const gameElement = document.getElementById("gameElement");
     let count = 0;
@@ -101,12 +106,12 @@ function startTiming(pattern, id, clear) {
     function green() {
       gameElement.classList.add("green");
       lastgreen = true;
-      secondBeep.play();
+      secondBeep_Sound();
     }
 
     function red() {
       gameElement.classList.add("red");
-      beep.play();
+      beep_Sound();
       if (lastgreen == true && hit == false) {
         hits = 0;
       } else {
@@ -121,17 +126,25 @@ function startTiming(pattern, id, clear) {
 
     function checkHit() {
       if (gameElement.classList.contains("green") && !hit) {
-        hitBeep.play();
         hits++;
         hit = true;
         console.log(hits);
         if (repeats == hits) {
           clearInterval(elcrono);
+          finish_Sound();
+          setBeaten(id);
+        }
+        else{
+          correct_Sound();
         }
       } else {
+        wrong_Sound();
         hits = 0;
       }
     }
+  }
+  else{
+    openEndedPopup();
   }
 }
 

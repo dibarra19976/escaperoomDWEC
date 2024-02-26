@@ -1,9 +1,11 @@
 function startMemory(game) {
   const cardsDiv = document.querySelector(".cards");
   if (!game.beaten) {
+    closeEndedPopup();
+    let timeout;
     const MIN = 4; //3
     const MAX = game.difficulty; //22
-    const msg = document.querySelector(".message");
+    const msg = document.getElementById("memory").querySelector(".message");
 
     let str = "";
     if (game.state == null) {
@@ -63,7 +65,6 @@ function startMemory(game) {
               setTimeout(function () {
                 flippedCards[i].parentElement.classList.add("glow");
                 removeDisable(allCards);
-                setTimeout(enableBack(), 1000);
               }, 600);
             }
 
@@ -72,6 +73,7 @@ function startMemory(game) {
               finish_Sound();
               showText("You won!", msg);
               setBeaten(game.id);
+              setTimeout(enableBack(), 1000);
             } else {
               correct_Sound();
               showText("You guessed a pair correctly!", msg);
@@ -83,7 +85,6 @@ function startMemory(game) {
                 wrong_Sound();
                 flippedCards[i].classList.remove("card-flipped");
                 removeDisable(allCards);
-                setTimeout(enableBack(), 1000);
               }, 600);
             }
           }
@@ -119,7 +120,8 @@ function startMemory(game) {
     function showText(string, element) {
       element.textContent = string;
       element.classList.remove("hide");
-      setTimeout(() => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
         element.classList.add("hide");
       }, 2000);
     }

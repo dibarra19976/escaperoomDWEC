@@ -6,9 +6,12 @@ let elcrono;
 let TimingStarted = false;
 
 function startTiming(game) {
+  closeEndedPopup();
+  let timeout;
   let clear = game.beaten;
   let id = game.id;
   let pattern = game.difficulty;
+  const msg = document.getElementById("timing").querySelector(".message");
 
   if (!clear) {
     const gameElement = document.getElementById("gameElement");
@@ -129,21 +132,31 @@ function startTiming(game) {
         hits++;
         hit = true;
         console.log(hits);
-        if (repeats == hits) {
+        if (repeats == hits) {   
+          finish_Sound();       
           clearInterval(elcrono);
-          finish_Sound();
+          showText("Has acabado de abrir la puerta", msg);
           setBeaten(id);
-        }
-        else{
-          correct_Sound();
+        } else {
+          correct_Sound();          
+          showText(`Has acertado, queda darle ${repeats-hits} veces `, msg);
+
         }
       } else {
         wrong_Sound();
+        showText("Has fallado", msg);
         hits = 0;
       }
     }
-  }
-  else{
+    function showText(string, element) {
+      element.textContent = string;
+      element.classList.remove("hide");
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        element.classList.add("hide");
+      }, 2000);
+    }
+  } else {
     openEndedPopup();
   }
 }

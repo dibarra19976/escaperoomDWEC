@@ -8,18 +8,18 @@ let memory = document.getElementById("memory");
 
 let gamesObj = {
   1: {
+    id: 1,
     type: "memory",
     difficulty: 5,
     beaten: false,
-    state: null,
-    id: 1,
+    state: null
   },
   2: {
     id: 2,
     type: "timing",
     difficulty: 4,
-    beaten: false,
-  },
+    beaten: false
+  }
 };
 
 function goBack() {
@@ -86,6 +86,12 @@ document.addEventListener("keydown", function(objEvent) {
 function openEndedPopup() {
   let ended = document.getElementById("ended");
   ended.classList.remove("closed");
+}
+
+
+function closeEndedPopup() {
+  let ended = document.getElementById("ended");
+  ended.classList.add("closed");
 }
 
 function disableBack() {

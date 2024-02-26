@@ -12,20 +12,108 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
-.gameElement {
-  height: 200px;
+.message {
+  color: white;
+  text-align: center;
   width: 100%;
-  background-color: rgb(63, 63, 63);
+  margin-bottom: 20px;
+  transition: 0.3s;
 }
 
-.red {
-
-    background-color: rgb(154, 0, 0);
+.hide {
+  opacity: 0;
 }
 
-.green {
+.mainColor {
+  width: 100%;
+  background-color: aqua;
+  height: 100%;
+}
 
-    background-color: rgb(62, 154, 0);
+.colorButton {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.buttons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+.color-blue {
+  background-color: #6ed8ff;
+  transition: 0.3s;
+}
+
+button.color-blue:active {
+  background-color: #83deff;
+  transition: 0s;
+}
+
+.color-pink {
+  background-color: #ffcfd2;
+  transition: 0.3s;
+}
+
+button.color-pink:active {
+  background-color: #ffe0e2;
+  transition: 0s;
+}
+
+.color-red {
+  background-color: #ff244c;
+  transition: 0.3s;
+}
+button.color-red:active {
+  background-color: #ff4e6e;
+  transition: 0s;
+}
+.color-green {
+  background-color: #18ff6d;
+  transition: 0.3s;
+}
+button.color-green:active {
+  background-color: #6bffa1;
+  transition: 0s
+}
+.color-yellow {
+  background-color: #ffee70;
+  transition: 0.3s;
+}
+button.color-yellow:active {
+  background-color: #fff9d0;
+  transition: 0s
+}
+.color-purple {
+  background-color: #a970ff;
+  transition: 0.3s;
+}
+button.color-purple:active {
+  background-color: #c7a1ff;
+  transition: 0s
+}
+.color-orange {
+  background-color: #ff8418;
+  transition: 0.3s;
+}
+button.color-orange:active {
+  background-color: #ffb87a;
+  transition: 0s
+}
+.color-cyan {
+  background-color: #18fff0;
+  transition: 0.3s;
+}
+button.color-cyan:active {
+  background-color: #7afff6;
+  transition: 0s
 }

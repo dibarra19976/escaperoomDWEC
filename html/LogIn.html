@@ -8,11 +8,13 @@
     <title>Inicio de sesion</title>
   </head>
   <body>
-    <!-- NavBar -->
-    <div class="nav">
+     <!-- NavBar -->
+     <div class="nav">
       <a href="/" class="left">Inicio</a>
-      <a href="/html/LogIn.html" class="right">Iniciar Sesion</a>
-      <a href="/html/Register.html" class="right">Registrarse</a>
+      <a href="/html/LogIn.html" class="right logedout">Iniciar Sesion</a>
+      <a href="/html/Register.html" class="right logedout">Registrarse</a>
+      <a href="#" class="right logedin closed" id="logout">Cerrar Sesion</a>
+      <a href="/html/Profile.html" class="right closed logedin" >Modificar Perfil</a>
     </div>
     <!-- Form -->
     <div class="container">
@@ -20,7 +22,7 @@
         <h1>Ya has iniciado sesion</h1>
         <button id="index">Volver a inicio</button>
         <hr>
-        <button id="logout">Cerrar sesion</button>
+        <button id="logoutBtn">Cerrar sesion</button>
       </div>
       <form class="form" id="form">
         <h1>Inicio de sesion</h1>

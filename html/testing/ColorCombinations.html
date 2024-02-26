@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Main.css" />
+    <link rel="stylesheet" href="/css/ColorCombinations.css" />
+    <link rel="stylesheet" href="/css/Games.css" />
+    <title>Color Combination Test</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="popup" id="games">
+        <div id="ended closed">
+          <p>Ya has completado esta prueba.</p>
+          <button id="backButton" onclick="goBack()">BACK</button>
+        </div>
+        <div id="colors" class="">
+          <div class="content">
+            <div class="game">
+              <h1 class="message hide">1</h1>
+              <div class="mainColor" id="gameElement">a</div>
+              <div class="buttons" id="buttons">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/Games.js"></script>
+    <script src="/js/ColorCombinations.js"></script>
+    <script>
+      let game = {
+        id: 1,
+        type: colors,
+        beaten : false,
+        difficulty: 4
+      }
+      startColorCombination(game);
+    </script>
+  </body>
+</html>

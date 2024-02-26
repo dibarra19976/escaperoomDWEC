@@ -10,14 +10,17 @@
     <!-- NavBar -->
     <div class="nav">
       <a href="/" class="left">Inicio</a>
-      <a href="/html/LogIn.html" class="right">Iniciar Sesion</a>
-      <a href="/html/Register.html" class="right">Registrarse</a>
+      <a href="/html/LogIn.html" class="right logedout">Iniciar Sesion</a>
+      <a href="/html/Register.html" class="right logedout">Registrarse</a>
+      <a href="#" class="right logedin closed" id="logout">Cerrar Sesion</a>
+      <a href="/html/Profile.html" class="right closed logedin" >Modificar Perfil</a>
     </div>
     <!-- Main Menu -->
     <div class="Main">
-      <div class="logo">ER</div>
+      <div class="logo"><img src="/img/LOGO.png" alt="Logo" id="logo"></div>
       <div class="menu">
         <ul>
+          <li id="continue" class="closed">Continuar</li>
           <li>Jugar el tutorial</li>
           <li>Jugar el nivel 1 (Normal)</li>
           <li>Jugar el nivel 2 (Dificil)</li>
@@ -26,5 +29,6 @@
         </ul>
       </div>
     </div>
+    <script src="/js/Main.js"></script>
   </body>
 </html>

@@ -30,3 +30,16 @@
 
     background-color: rgb(62, 154, 0);
 }
+
+
+.message {
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.hide {
+  opacity: 0;
+}

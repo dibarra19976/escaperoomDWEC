@@ -1,29 +1,29 @@
-const email = document.getElementById("email");
+const form = document.getElementById("form");
+const user = document.getElementById("user");
 const password = document.getElementById("password");
+const passwordRepeat = document.getElementById("passwordRepeat");
 
-const popup = document.getElementById("popup");
-const index = document.getElementById("index");
-const logout = document.getElementById("logoutBtn");
+const logout = document.getElementById("logout");
 
 let users;
-
+let currentUser;
 //EVENT LISTENERS
 
 window.onload = (event) => {
   let logged = localStorage.getItem("loggedUser");
   if (logged !== null) {
-    form.classList.add("hidden");
-    popup.classList.remove("hidden");
     let logedout = document.querySelectorAll(".logedout");
     let logedin = document.querySelectorAll(".logedin");
     logedout.forEach((e) => { e.classList.add("closed")});
     logedin.forEach((e) => { e.classList.remove("closed")});
+    currentUser = JSON.parse(localStorage.getItem("loggedUser"));
+    user.value = currentUser.user;
+    password.value = currentUser.password;
+    passwordRepeat.value = currentUser.password;
+  } else {
+    window.location.href = "/Index.html";
   }
 };
-
-index.addEventListener("click", (e) => {
-  window.location.href = "/Index.html";
-});
 
 logout.addEventListener("click", (e) => {
   localStorage.removeItem("loggedUser");
@@ -32,11 +32,13 @@ logout.addEventListener("click", (e) => {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  checkLength(password, 6, 25);  
-  checkValidEmail(email);
-  checkRequired([email, password]);
+  checkLength(user, 3, 15);
+  checkLength(password, 6, 25);
+  checkLength(passwordRepeat, 6, 25);
+  checkSamePassword(password, passwordRepeat);
+  checkRequired([user, password, passwordRepeat]);
 
-  logIn();
+  saveChanges();
 });
 
 //FUNCIONES DE COMPROBACION
@@ -58,21 +60,13 @@ function checkLength(input, min, max) {
   }
 }
 
-function checkValidEmail(input) {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(input.value.trim())) {
-    showCorrect(input);
+function checkSamePassword(input1, input2) {
+  if (input1.value !== input2.value) {
+    let missatge = `La segunda contraseña no es igual`;
+    showError(input2, missatge);
   } else {
-    let missatge = `No es un correo electronico valido`;
-    showError(input, missatge);
+    showCorrect(input2);
   }
-}
-
-function emailExists(input) {
-  getUserArray();
-  return (users.hasOwnProperty(input.value.trim()));
-  
 }
 
 //FUNCIONES PARA MOSTRAR INFORMACION
@@ -94,6 +88,11 @@ function showCorrect(input) {
 
 //FUNCIONES PARA EL MANEJO DE USUARIOS
 
+function updateUsers() {
+  let json = JSON.stringify(users);
+  localStorage.setItem("users", json);
+}
+
 function getUserArray() {
   let json = localStorage.getItem("users");
   if (json === null || json === "") {
@@ -103,23 +102,18 @@ function getUserArray() {
   users = JSON.parse(json);
 }
 
-//Funcion para Iniciar Sesion
-
-function logIn() {
+function saveChanges() {
   let errors = document.querySelectorAll(".error").length;
-  let bottom = document.getElementById("bottom");
   if (errors === 0) {
     getUserArray();
-    if (emailExists(email) && users[email.value.trim()]["password"] === password.value.trim() ) {
-      bottom.className = " hidden";
-      localStorage.setItem("loggedUser", JSON.stringify(users[email.value]));
-      window.location.href = "/Index.html";
-    }
-    else{
-      bottom.className = " ";
-      showError(email, "");
-      showError(password, "");  
-    }
+    users[currentUser.email] = {
+      email: currentUser.email,
+      user: user.value,
+      password: password.value,
+    };
+    updateUsers();
+    localStorage.setItem("loggedUser", JSON.stringify(users[currentUser.email]));
+    window.location.href = "/Index.html";
   }
 }
 

@@ -40,7 +40,7 @@ body {
 .menu li {
   font-size: 30px;
   transition: 0.1s;
-  margin-block: 55px;
+  margin-block: 30px;
   cursor: pointer;
   font-weight: 500;
 }
@@ -102,3 +102,36 @@ body {
   background-size: 100% auto
 }
 
+#logo{
+  width: 50%;
+  padding: 90px;
+  transition: 0.2s;
+  animation: redglow 3s infinite;
+}
+
+#continue:hover{
+  transform: translateX(15px);
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60000, 0 0 40px #e60000,
+    0 0 50px #e60000, 0 0 60px #e60000, 0 0 70px #e6cf00;
+}
+
+.closed {
+  display: none;
+  visibility: hidden;
+}
+
+
+#logo:hover{
+}
+
+@keyframes redglow {
+  0%{
+
+  }
+  50%{
+    filter: drop-shadow(0 0 30px rgb(255, 255, 255));
+  }
+  100%{
+    
+  }
+}

@@ -6,7 +6,8 @@ const passwordRepeat = document.getElementById("passwordRepeat");
 
 const popup = document.getElementById("popup");
 const index = document.getElementById("index");
-const logout = document.getElementById("logout");
+const logout = document.getElementById("logoutBtn");
+
 
 let users;
 
@@ -17,6 +18,10 @@ window.onload = (event) => {
   if (logged !== null  ) {
     form.classList.add("hidden");
     popup.classList.remove("hidden");
+    let logedout = document.querySelectorAll(".logedout");
+    let logedin = document.querySelectorAll(".logedin");
+    logedout.forEach((e) => { e.classList.add("closed")});
+    logedin.forEach((e) => { e.classList.remove("closed")});
   }
 };
 
@@ -135,3 +140,6 @@ function register() {
     window.location.href = "/Index.html";
   }
 }
+
+document.getElementById("logout").addEventListener("click", () => {   localStorage.removeItem("loggedUser");
+location.reload(); });

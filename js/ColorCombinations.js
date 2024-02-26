@@ -1,143 +1,47 @@
-let elcrono;
-let TimingStarted = false;
-let beep = new Audio("/sounds/Timing/beep.mp3");
-let hitBeep = new Audio("/sounds/Timing/hit-beep.mp3");
-let secondBeep = new Audio("/sounds/Timing/secondbeep.mp3");
+function startColorCombination(game){
+  if(!game.beaten){
+    let difficulty = game.difficulty;
+    const colors = ["blue", "purple", "green", "yellow", "orange", "pink", "red", "cyan"];
+    const repeats = 5;
+    let colorsQty = game.difficulty; // max 8
+    const colorsMin = game.difficulty; // 8
+    let correctSequences = 0;
+    let elcrono ; //= setInterval(advance, 300);
+    let availableColors;
+    let speed = 1000;
+    const minspeed = 1000;
 
-function startTiming(pattern, id) {
-  const gameElement = document.getElementById("gameElement");
-  let count = 0;
-  let hits = 0;
-  let lastgreen = false;
-  let hit = false;
-  let repeats = 0;
-  function advance() {
-  }
-  // switch patterns
-  switch (pattern) {
-    case 1:
-      repeats = 3;
-      advance = function () {
-        count++;
-        if (count == 4) {
-          green();
-          count = 0;
-        } else {
-          red();
-        }
-        setTimeout(removeColor, 500);
-      };
-      elcrono = setInterval(advance, 700);
-      break;
-    case 2:
-      repeats = 5;
-      advance = function () {
-        count++;
-        if (count % 2 == 0) {
-          green();
-        } else {
-          red();
-        }
-        setTimeout(removeColor, 300);
-      };
-      elcrono = setInterval(advance, 500);
-      break;
-    case 3:
-      repeats = 6;
-      advance = function () {
-        count++;
-        if (count == 3) {
-          count = 0;
-          green();
-          clearInterval(elcrono);
-          setTimeout(() => {
-            if (hits != repeats) {
-              elcrono = setInterval(advance, 400);
-            }
-          }, 300);
-        } else {
-          red();
-        }
-        setTimeout(removeColor, 250);
-      };
-      elcrono = setInterval(advance, 400);
-      break;
-    case 4:
-      repeats = 7;
-      advance = function () {
-        count++;
-        if (count == 3 ) {
-          green();
-        } else {
-          if (count == 4) {
-            count = 0;
-            clearInterval(elcrono);
-            setTimeout(() => {
-              if (hits != repeats) {
-                elcrono = setInterval(advance, 300);
-              }
-            }, 200);
-            
-          }
-          red();
-
-        }
-        setTimeout(removeColor, 250);
-      };
-      elcrono = setInterval(advance, 300);
-      break;
-    default:
-      break;
-  }
-
-  document.body.onkeyup = function (e) {
-    if (e.key == " " || e.code == "Space") {
-      checkHit();
+    function turno(){
+      availableColors = shuffleArray(colors).slice(0 , difficulty );
+      let buttonsDiv = document.getElementById("colors").querySelector(".buttons");
+      let str = " ";
+      availableColors.forEach((e) => {
+        console.log(e);
+        str += `<button class="colorButton color-${e}" value="${e}"></button>`;
+      });
+      buttonsDiv.innerHTML = str;
     }
-  };
 
-  gameElement.onclick = function (e) {
-    checkHit();
-  };
-
-  function green() {
-    gameElement.classList.add("green");
-    lastgreen = true;
-    secondBeep.play();
-  }
-
-  function red() {
-    gameElement.classList.add("red");
-    beep.play();
-    if (lastgreen == true && hit == false) {
-      hits = 0;
-    } else {
-      hit = false;
-      lastgreen = false;
+    function showColor(){
+      let mainColor = document.getElementById("colors").querySelector(".mainColor");
+      
     }
-  }
-  function removeColor() {
-    gameElement.classList.remove("red");
-    gameElement.classList.remove("green");
-  }
 
-  function checkHit() {
-    if (gameElement.classList.contains("green") && !hit) {
-      hitBeep.play();
-      hits++;
-      hit = true;
-      console.log(hits);
-      if (repeats == hits) {
-        clearInterval(elcrono);
+    function getRandom(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
       }
-    } else {
-      hits = 0;
+      return array;
     }
+    turno();
   }
-}
+  else{
 
-startTiming(4, 12);
-
-function pause() {
-  clearInterval(elcrono);
+  }
 }

@@ -1,3 +1,4 @@
+
 #gameElement,
 .popup {
   width: 100%;
@@ -29,9 +30,10 @@
 
 .mainColor {
   width: 100%;
-  background-color: aqua;
   height: 100%;
-}
+  background-color: gray;
+  transition: 0.3s;
+} 
 
 .colorButton {
   width: 100%;

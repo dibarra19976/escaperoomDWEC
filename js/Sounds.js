@@ -22,3 +22,7 @@ function flip_Sound() {
   let flip = new Audio("/sounds/Games/flip.mp3");
   flip.play();
 }
+function button_Sound() {
+  let button = new Audio("/sounds/Games/button.mp3");
+  button.play();
+}

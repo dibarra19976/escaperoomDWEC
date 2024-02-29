@@ -119,3 +119,16 @@ button.color-cyan:active {
   background-color: #7afff6;
   transition: 0s
 }
+
+
+.buttons button{
+  border-radius: 10px;
+  box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0,0,0,0.6);
+ transition: all 150ms ease;
+}
+
+button:active
+{
+	box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	transform: translateY(3px);
+} 

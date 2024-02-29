@@ -44,6 +44,7 @@ function startColorCombination(game) {
     }
 
     function btnPress(element) {
+      button_Sound();
       if (userColors.length < colorsQty) {
         userColors.push(element.target.value);
         if (userColors.length == colorsQty) {
@@ -56,8 +57,10 @@ function startColorCombination(game) {
       if (JSON.stringify(userColors) == JSON.stringify(colorSequence)) {
         correctSequences++;
         if (correctSequences == repeats) {
+          finish_Sound();
           showText(`Has terminado!`, msg);
         } else {
+          correct_Sound();
           colorsQty++;
           speed -= 175;
           showText(
@@ -69,6 +72,7 @@ function startColorCombination(game) {
           turno();
         }
       } else {
+        wrong_Sound();
         speed = minspeed;
         correctSequences = 0;
         colorsQty = colorsMin;
@@ -83,6 +87,7 @@ function startColorCombination(game) {
         .getElementById("colors")
         .querySelector(".mainColor");
       if (currentColor < colorsQty) {
+        beep_Sound();
         // mainColor.classList.remove(".color-")
         if (currentColor > 0) {
           mainColor.classList.remove(
@@ -91,9 +96,7 @@ function startColorCombination(game) {
         }
         mainColor.classList.add("color-" + colorSequence[currentColor]);
         currentColor++;
-        // setTimeout(() => {
-        //   mainColor.classList.remove("color-" + colorSequence[currentColor]);
-        // }, speed - 200);
+       
         //ARREGLAR TIMEOUT
       } else {
         mainColor.classList.remove("color-" + colorSequence[currentColor - 1]);

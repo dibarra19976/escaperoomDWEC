@@ -6,6 +6,7 @@ const popup = document.getElementById("games");
 let timing = document.getElementById("timing");
 let memory = document.getElementById("memory");
 let colors = document.getElementById("colors");
+let quit = document.getElementById("quitPopup");
 
 let gamesObj = {
   1: {
@@ -113,4 +114,12 @@ function enableBack() {
   setTimeout(() => {
     document.getElementById("backButton").disabled = false;
   }, 600);
+}
+
+
+function quit(){
+  blurButtons();
+  closeAllGames();
+  openPopup();
+  
 }

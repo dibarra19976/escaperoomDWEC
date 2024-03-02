@@ -17,5 +17,12 @@
     "type": "colors",
     "difficulty": 4,
     "beaten": false
+  },
+  "4": {
+    "id": 4,
+    "type": "riddle",
+    "difficulty": 4,
+    "beaten": false,
+    "hintUsed" : false
   }
 }

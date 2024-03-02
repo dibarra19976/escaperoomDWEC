@@ -5,6 +5,7 @@ let currentGame;
 const popup = document.getElementById("games");
 let timing = document.getElementById("timing");
 let memory = document.getElementById("memory");
+let colors = document.getElementById("colors");
 
 let gamesObj = {
   1: {
@@ -12,26 +13,32 @@ let gamesObj = {
     type: "memory",
     difficulty: 5,
     beaten: false,
-    state: null
+    state: null,
   },
   2: {
     id: 2,
     type: "timing",
     difficulty: 4,
-    beaten: false
-  }
+    beaten: false,
+  },
+  3: {
+    id: 3,
+    type: "colors",
+    beaten: false,
+    difficulty: 1,
+  },
 };
 
 function goBack() {
-    pause();
-    popup.classList.add("closed");
-    popupOpen = false;
+  pause();
+  popup.classList.add("closed");
+  popupOpen = false;
 }
 
 function openMinigame(id) {
   blurButtons();
   if (gamesObj.hasOwnProperty(id)) {
-    closeAllGames();    
+    closeAllGames();
     openPopup();
     let game = gamesObj[id];
     let type = game.type;
@@ -43,6 +50,10 @@ function openMinigame(id) {
       case "timing":
         timing.classList.remove("closed");
         startTiming(game);
+        break;
+      case "colors":
+        colors.classList.remove("closed");
+        startColorCombination(game);
         break;
     }
   } else {
@@ -65,29 +76,29 @@ function setBeaten(id) {
   }
 }
 
-function openPopup(){
+function openPopup() {
   popup.classList.remove("closed");
   popupOpen = true;
 }
 
-function blurButtons(){
+function blurButtons() {
   let elements = document.querySelectorAll("button");
   elements.forEach((element) => {
     element.blur();
   });
 }
 
-document.addEventListener("keydown", function(objEvent) {
-  if (objEvent.keyCode == 9) {  //tab pressed
-      objEvent.preventDefault(); // stops its action
+document.addEventListener("keydown", function (objEvent) {
+  if (objEvent.keyCode == 9) {
+    //tab pressed
+    objEvent.preventDefault(); // stops its action
   }
-})
+});
 
 function openEndedPopup() {
   let ended = document.getElementById("ended");
   ended.classList.remove("closed");
 }
-
 
 function closeEndedPopup() {
   let ended = document.getElementById("ended");
@@ -95,13 +106,11 @@ function closeEndedPopup() {
 }
 
 function disableBack() {
-   document.getElementById("backButton").disabled = true; 
+  document.getElementById("backButton").disabled = true;
 }
 
 function enableBack() {
-
   setTimeout(() => {
-    document.getElementById("backButton").disabled = false; 
+    document.getElementById("backButton").disabled = false;
   }, 600);
-
 }

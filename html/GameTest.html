@@ -6,12 +6,31 @@
     <link rel="stylesheet" href="/css/Main.css" />
     <link rel="stylesheet" href="/css/Memory.css" />
     <link rel="stylesheet" href="/css/Timing.css" />
+    <link rel="stylesheet" href="/css/ColorCombinations.css" />
     <link rel="stylesheet" href="/css/Games.css" />
     <title>Game Test</title>
   </head>
   <body>
     <div class="container">
+      <div class="ui">
+        <button id="hint" title="Pistas">
+          <i class="bi bi-question-lg"></i>
+        </button>
+        <p id="timer">00:00:00</p>
+        <p id="score">Puntuacion: <span>000</span></p>
+        <p id="player">PLAYER: <span>Anonymous</span></p>
+        <button id="quit" title="Salir">
+          <i class="bi bi-box-arrow-left"></i>
+        </button>
+      </div>
       <div class="popup closed" id="games">
+        <div id="quitPopUp" class="closed">
+          <div>
+            <h1>Estas a punto de salir de la partida</h1>
+            <button>Guardar y salir</button>
+            <button>Salir sin guardar</button>
+          </div>
+        </div>
         <button id="backButton" onclick="goBack(); this.blur; ">BACK</button>
         <div id="ended" class="closed">
           <p>Ya has completado esta prueba.</p>
@@ -30,17 +49,30 @@
             </div>
           </div>
         </div>
+        <div id="colors" class="closed minigame">
+          <div class="content">
+            <div class="game">
+              <h1 class="message hide">1</h1>
+              <div class="mainColor" id="gameElement"></div>
+              <div class="buttons" id="buttons"></div>
+            </div>
+          </div>
+        </div>
         <div id="otroJuego" class="closed"></div>
       </div>
       <div class="world">
         MUNDO
         <button id="iniciar" onclick="openMinigame(1)">Iniciar memory</button>
         <button id="iniciar" onclick="openMinigame(2)">Iniciar timing</button>
+        <button id="iniciar" onclick="openMinigame(3)">
+          Iniciar colorCombinations
+        </button>
       </div>
     </div>
     <script src="/js/Sounds.js"></script>
     <script src="/js/Games.js"></script>
     <script src="/js/Memory.js"></script>
     <script src="/js/Timing.js"></script>
+    <script src="/js/ColorCombinations.js"></script>
   </body>
 </html>

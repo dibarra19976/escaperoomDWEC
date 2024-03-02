@@ -3,11 +3,11 @@
   visibility: hidden;
 }
 
-#backButton{
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: 10;
+#backButton {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 10;
 }
 
 * {
@@ -25,9 +25,8 @@
   align-items: center;
   justify-content: center;
 }
-  
 
-#ended{
+#ended {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -36,6 +35,107 @@
   background-color: blueviolet;
 }
 
-.popup{
+.popup {
   position: absolute;
+}
+
+.ui {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.ui p, .ui span {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-size: 14pt;
+  text-shadow: 0 1px 0 #666, 0 0px 0 #444, 0 0px 6px rgba(0, 0, 0, 0.6);
+}
+
+.ui #hint {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+.ui #quit {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+}
+
+.ui #timer {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.ui #score {
+  position: absolute;
+  top: 60px;
+  left: 30px;
+}
+
+.ui #player {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.ui button {
+  color: black;
+  background: none;
+  border: none;
+  font-size: 20pt;
+  background-color: white;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  transform: 0.3s;
+  box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0, 0, 0, 0.6);
+  transition: all 150ms ease;
+  pointer-events: all;
+}
+
+
+.ui button:active
+{
+ 
+	box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0,0,0,0.9);
+	transform: translateY(3px);
+  
+} 
+
+.ui button:hover{
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+#quitPopUp{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+}
+
+#quitPopUp{
+  background-color: blanchedalmond;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#quitPopUp div{
+  
+}
+
+body {
+  background-color: rgb(118, 118, 118);
+}
+
+.ui{
+  pointer-events: none;
 }

@@ -1,3 +1,26 @@
+let mutedSong = false;
+let music = document.getElementById("music");
+
+//CANCIONES
+function mainMenu_Song(){
+  music.setAttribute("src", "/sounds/background/mainmenu.mp3");
+  music.loop = true;
+  music.play();
+  console.log(music);
+}
+
+function mute_Song(){
+  music.pause();
+  music.currentTime = 0;
+  mutedSong = true;
+}
+
+function resume_Song(){
+  music.play();
+  mutedSong = false;
+}
+
+//EFECTOS DE SONIDO
 function secondBeep_Sound() {
   let secondBeep = new Audio("/sounds/Games/secondbeep.mp3");
   secondBeep.play();
@@ -26,3 +49,18 @@ function button_Sound() {
   let button = new Audio("/sounds/Games/button.mp3");
   button.play();
 }
+function select_Sound(){
+  let select = new Audio("/sounds/Ui/select.mp3");
+  select.play();
+}
+
+
+window.onfocus = function() {
+  if(!mutedSong){
+    music.play();
+  }
+};
+
+window.onblur = function() {
+  music.pause();
+};

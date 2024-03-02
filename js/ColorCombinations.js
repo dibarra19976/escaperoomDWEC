@@ -19,6 +19,7 @@ function startColorCombination(game) {
     let colorsQty = game.difficulty; // max 8
     const minspeed = 1000;
     let speed = 1000;
+    let id = game.id;
     //arrays
     let availableColors;
     let userColors = [];
@@ -59,6 +60,7 @@ function startColorCombination(game) {
         if (correctSequences == repeats) {
           finish_Sound();
           showText(`Has terminado!`, msg);
+          setBeaten(id);
         } else {
           correct_Sound();
           colorsQty++;
@@ -83,6 +85,8 @@ function startColorCombination(game) {
     }
 
     function showColor() {
+      disableBack();
+      showText("‎ ", msg);
       let mainColor = document
         .getElementById("colors")
         .querySelector(".mainColor");
@@ -93,6 +97,9 @@ function startColorCombination(game) {
           mainColor.classList.remove(
             "color-" + colorSequence[currentColor - 1]
           );
+          if(colorSequence[currentColor - 1] === colorSequence[currentColor]){
+            showText("!", msg);
+          }
         }
         mainColor.classList.add("color-" + colorSequence[currentColor]);
         currentColor++;
@@ -102,6 +109,7 @@ function startColorCombination(game) {
         mainColor.classList.remove("color-" + colorSequence[currentColor - 1]);
         addButtons();
         clearInterval(elcrono);
+        enableBack();
       }
     }
 
@@ -150,5 +158,6 @@ function startColorCombination(game) {
 
     turno();
   } else {
+    openEndedPopup();
   }
 }

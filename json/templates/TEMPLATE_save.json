@@ -1,0 +1,26 @@
+{
+  "games": {
+    "1": {
+      "id": 1,
+      "type": "memory",
+      "difficulty": 5,
+      "beaten": false,
+      "state": null
+    },
+    "2": {
+      "id": 2,
+      "type": "timing",
+      "difficulty": 4,
+      "beaten": false
+    },
+    "3": {
+      "id": 3,
+      "type": "colors",
+      "difficulty": 4,
+      "beaten": false
+    }
+  },
+  "flags": {
+    
+  }
+}

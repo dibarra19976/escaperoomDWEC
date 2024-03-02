@@ -128,19 +128,22 @@ function startTiming(game) {
     }
 
     function checkHit() {
+      gameElement.classList.add("down");
+      setTimeout(() => {
+        gameElement.classList.remove("down");
+      }, 100);
       if (gameElement.classList.contains("green") && !hit) {
         hits++;
         hit = true;
         console.log(hits);
-        if (repeats == hits) {   
-          finish_Sound();       
+        if (repeats == hits) {
+          finish_Sound();
           clearInterval(elcrono);
           showText("Has acabado de abrir la puerta", msg);
           setBeaten(id);
         } else {
-          correct_Sound();          
-          showText(`Has acertado, queda darle ${repeats-hits} veces `, msg);
-
+          correct_Sound();
+          showText(`Has acertado, queda darle ${repeats - hits} veces `, msg);
         }
       } else {
         wrong_Sound();

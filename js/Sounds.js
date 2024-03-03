@@ -58,6 +58,11 @@ function select_Sound() {
   select.play();
 }
 
+function keydown_Sound() {
+  let select = new Audio("/sounds/Ui/mech-keyboard-02-102918.mp3");
+  select.play();
+}
+
 window.onfocus = function () {
   if (!mutedSong) {
     music.play();

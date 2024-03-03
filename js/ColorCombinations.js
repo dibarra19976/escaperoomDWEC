@@ -27,6 +27,7 @@ function startColorCombination(game) {
     let currentColor = 0;
 
     function turno() {
+      removeButtons();
       currentColor = 0;
       availableColors = shuffleArray(colors).slice(0, colorsMin);
       userColors = new Array();

@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="/css/Memory.css" />
     <link rel="stylesheet" href="/css/Timing.css" />
     <link rel="stylesheet" href="/css/ColorCombinations.css" />
+    <link rel="stylesheet" href="/css/Riddles.css" />
     <link rel="stylesheet" href="/css/Games.css" />
     <title>Game Test</title>
   </head>
   <body>
     <div class="container">
+      <!-- POPUP DE SALIR -->
       <div id="quitPopUp" class="closed">
         <div>
           <button id="back" onclick="quitPopUpHide(); this.blur; ">
@@ -24,6 +26,7 @@
           </div>
         </div>
       </div>
+      <!-- POPUP DE PISTAS -->
       <div id="hintPopUp" class="closed">
         <div>
           <button id="back" onclick="hintPopUpHide(); this.blur; ">
@@ -72,8 +75,15 @@
             </div>
           </div>
         </div>
-
-        <div id="otroJuego" class="closed"></div>
+        <div id="riddle" class="minigame closed">
+          <div class="content">
+            <div class="game">
+              <h1 class="riddleText">Advina adivinanza</h1>
+              <input type="text" id="userGuess" />
+              <button>Continuar <i class="bi bi-caret-right-fill"></i></button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="world">
         MUNDO
@@ -82,6 +92,7 @@
         <button id="iniciar" onclick="openMinigame(3)">
           ColorCombinations
         </button>
+        <button id="iniciar" onclick="openMinigame(4)">Riddle</button>
       </div>
     </div>
     <audio src="" id="music"></audio>
@@ -89,6 +100,7 @@
     <script src="/js/Games.js"></script>
     <script src="/js/Memory.js"></script>
     <script src="/js/Timing.js"></script>
+    <script src="/js/Riddles.js"></script>
     <script src="/js/ColorCombinations.js"></script>
   </body>
 </html>

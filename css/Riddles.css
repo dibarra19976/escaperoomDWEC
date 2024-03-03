@@ -47,3 +47,9 @@
   width: 100%;
   border-bottom: 3px rgb(255, 255, 255) solid;
 }
+
+#riddle .game{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Main.css" />
+    <link rel="stylesheet" href="/css/Riddles.css" />
+    <link rel="stylesheet" href="/css/Games.css" />
+    <title>Riddles Test</title>
+  </head>
+  <body>
+    <div class="container">
+        <div id="hintPopUp" class="closed">
+            <div>
+              <button id="back" onclick="hintPopUpHide(); this.blur; ">
+                <i class="bi bi-x-lg"></i>
+              </button>
+              <p>Pista pista pista ding ding ding</p>
+            </div>
+          </div>
+          <div class="ui">
+            <button id="hint" title="Pistas" onclick="hintPopUp()">
+              <i class="bi bi-question-lg"></i>
+            </button>
+            <p id="timer">00:00:00</p>
+            <p id="score">Puntuacion: <span>000</span></p>
+            <p id="player">PLAYER: <span>Anonymous</span></p>
+            <button id="quit" onclick="quitPopUp()" title="Salir">
+              <i class="bi bi-box-arrow-left"></i>
+            </button>
+            <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
+          </div>
+      <div class="popup" id="games">
+        <div id="ended" class="closed">
+          <p>Ya has completado esta prueba.</p>
+          <button id="backButton" onclick="goBack()">BACK</button>
+        </div>
+        <div id="riddle" class="minigame">
+          <div class="content">
+            <div class="game">
+              <h1 class="riddleText">Advina adivinanza</h1>
+               <input type="text" id="userGuess">
+               <button>Continuar <i class="bi bi-caret-right-fill"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/js/Sounds.js"></script>
+    <script src="/js/Games.js"></script>
+    <script src="/js/Riddles.js"></script>
+    <script>
+      let game = {
+        id: 1,
+        type: riddle,
+        beaten : false,
+        difficulty: 4,
+        hintUsed: false,
+        index: null
+      }
+      startRiddle(game);
+    </script>
+  </body>
+</html>

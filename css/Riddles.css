@@ -1,0 +1,49 @@
+#gameElement,
+.popup {
+  width: 100%;
+}
+
+.game {
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 60px;
+  border-radius: 30px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#riddle button {
+  font-size: 13pt;
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 0 #666, 0 5px 0 #444, 0 6px 6px rgba(0, 0, 0, 0.6);
+  transition: all 150ms ease;
+}
+
+#riddle  button:active {
+  box-shadow: 0 1px 0 #666, 0 2px 0 #444, 0 2px 2px rgba(0, 0, 0, 0.9);
+  transform: translateY(3px);
+}
+
+#riddle  input[type="text"] {
+  height: 30px;
+  color: white;
+  background: none;
+  border: none;
+  border-bottom: 3px rgb(80, 80, 80) solid;
+  transition: 0.2s;
+  outline: none;
+  width: 100%;
+  font-size: 12pt;
+}
+
+#riddle  input[type="text"]:focus {
+  width: 100%;
+  border-bottom: 3px rgb(255, 255, 255) solid;
+}

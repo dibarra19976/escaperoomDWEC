@@ -1,12 +1,11 @@
 let popupOpen = false;
 let currentGame;
-
+let timer;
 // ELEMENTOS
 const popup = document.getElementById("games");
 let timing = document.getElementById("timing");
 let memory = document.getElementById("memory");
 let colors = document.getElementById("colors");
-let quit = document.getElementById("quitPopup");
 
 let gamesObj = {
   1: {
@@ -116,10 +115,42 @@ function enableBack() {
   }, 600);
 }
 
+function quitPopUp() {
+  select_Sound();
+  pause_Song();
+  let quit = document.getElementById("quitPopUp");
+  quit.classList.remove("closed");
+  quit.classList.add("fadeIn");
+}
 
-function quit(){
-  blurButtons();
-  closeAllGames();
-  openPopup();
-  
+function quitPopUpHide() {
+  if (!mutedSong) {
+    resume_Song();
+  }
+  let quit = document.getElementById("quitPopUp");
+  quit.classList.add("closed");
+  quit.classList.remove("fadeIn");
+}
+
+function hintPopUp() {
+  let quit = document.getElementById("hintPopUp");
+  quit.classList.remove("closed");
+  quit.classList.add("fadeIn");
+}
+
+function hintPopUpHide() {
+  let quit = document.getElementById("hintPopUp");
+  quit.classList.add("closed");
+  quit.classList.remove("fadeIn");
+}
+
+function loadDoc(callback, file) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    if (callback && typeof callback === 'function') {
+      callback(this.responseText);
+    }
+  };
+  xhttp.open("GET", file, true);
+  xhttp.send();
 }

@@ -12,25 +12,39 @@
   </head>
   <body>
     <div class="container">
+      <div id="quitPopUp" class="closed">
+        <div>
+          <button id="back" onclick="quitPopUpHide(); this.blur; ">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <h1>Estas a punto de salir de la partida</h1>
+          <div>
+            <button>Guardar y salir</button>
+            <button>Salir sin guardar</button>
+          </div>
+        </div>
+      </div>
+      <div id="hintPopUp" class="closed">
+        <div>
+          <button id="back" onclick="hintPopUpHide(); this.blur; ">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <p>Pista pista pista ding ding ding</p>
+        </div>
+      </div>
       <div class="ui">
-        <button id="hint" title="Pistas">
+        <button id="hint" title="Pistas" onclick="hintPopUp()">
           <i class="bi bi-question-lg"></i>
         </button>
         <p id="timer">00:00:00</p>
         <p id="score">Puntuacion: <span>000</span></p>
         <p id="player">PLAYER: <span>Anonymous</span></p>
-        <button id="quit" title="Salir">
+        <button id="quit" onclick="quitPopUp()" title="Salir">
           <i class="bi bi-box-arrow-left"></i>
         </button>
+        <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
       </div>
       <div class="popup closed" id="games">
-        <div id="quitPopUp" class="closed">
-          <div>
-            <h1>Estas a punto de salir de la partida</h1>
-            <button>Guardar y salir</button>
-            <button>Salir sin guardar</button>
-          </div>
-        </div>
         <button id="backButton" onclick="goBack(); this.blur; ">BACK</button>
         <div id="ended" class="closed">
           <p>Ya has completado esta prueba.</p>
@@ -58,6 +72,7 @@
             </div>
           </div>
         </div>
+
         <div id="otroJuego" class="closed"></div>
       </div>
       <div class="world">
@@ -65,11 +80,11 @@
         <button id="iniciar" onclick="openMinigame(1)">Iniciar memory</button>
         <button id="iniciar" onclick="openMinigame(2)">Iniciar timing</button>
         <button id="iniciar" onclick="openMinigame(3)">
-        <button id="iniciar" onclick="quit()">
-          Iniciar colorCombinations
+          ColorCombinations
         </button>
       </div>
     </div>
+    <audio src="" id="music"></audio>
     <script src="/js/Sounds.js"></script>
     <script src="/js/Games.js"></script>
     <script src="/js/Memory.js"></script>

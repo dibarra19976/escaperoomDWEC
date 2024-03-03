@@ -11,21 +11,6 @@ window.onload = (event) => {
     });
   }
 };
-const playing = `<i class="bi bi-volume-up-fill"></i>`;
-const muted = `<i class="bi bi-volume-mute-fill"></i>`;
-const muteButton = document.getElementById("mute");
-muteButton.addEventListener("click", () => {
-  muteButton.classList.toggle("muted");
-  if(muteButton.classList.contains("muted")){
-    muteButton.innerHTML = muted;
-    mute_Song();
-  }
-  else{
-    muteButton.innerHTML = playing;
-    resume_Song();
-  }
-  
-});
 
 document.getElementById("logout").addEventListener("click", () => {
   localStorage.removeItem("loggedUser");

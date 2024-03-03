@@ -1,40 +1,39 @@
 {
-  "games": {
-    "1": {
-      "id": 1,
+  "games":  [
+    {
+      "id": 0,
       "type": "memory",
       "difficulty": 5,
       "beaten": false,
       "state": null
     },
-    "2": {
-      "id": 2,
+    {
+      "id": 1,
       "type": "timing",
       "difficulty": 4,
       "beaten": false
     },
-    "3": {
-      "id": 3,
+    {
+      "id": 2,
       "type": "colors",
-      "difficulty": 4,
-      "beaten": false
-    },
-    "4": {
-      "id": 4,
-      "type": "riddle",
-      "difficulty": 4,
       "beaten": false,
-      "hintUsed" : false
-    }
-  },
-  "flags": [
-    {
-      "type": "game",
-      "id": 1
+      "difficulty": 1
     },
     {
+      "id": 3,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 4,
       "type": "text",
-      "text": "TextoTextoTextoTexto"
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "beaten": false
     }
-  ]
+  ],
+  "background" : "/img/background.jpg",
+  "music" : "theme2_Song();"
 }

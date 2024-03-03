@@ -3,11 +3,10 @@
 //Sounds.js
 
 let elcrono;
-let TimingStarted = false;
-
 function startTiming(game) {
   closeEndedPopup();
   let timeout;
+  let attempts = 1;
   let clear = game.beaten;
   let id = game.id;
   let pattern = game.difficulty;
@@ -141,6 +140,7 @@ function startTiming(game) {
           clearInterval(elcrono);
           showText("Has acabado de abrir la puerta", msg);
           setBeaten(id);
+          calculateScore(attempts);
         } else {
           correct_Sound();
           showText(`Has acertado, queda darle ${repeats - hits} veces `, msg);
@@ -149,6 +149,7 @@ function startTiming(game) {
         wrong_Sound();
         showText("Has fallado", msg);
         hits = 0;
+        attempts++;
       }
     }
     function showText(string, element) {

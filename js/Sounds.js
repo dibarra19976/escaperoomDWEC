@@ -9,6 +9,26 @@ function mainMenu_Song() {
   console.log(music);
 }
 
+function theme1_Song() {
+  music.setAttribute("src", "/sounds/background/theme1.mp3");
+  music.loop = true;
+  music.play();
+  console.log(music);
+}
+
+function theme2_Song() {
+  music.setAttribute("src", "/sounds/background/theme2.mp3");
+  music.loop = true;
+  music.play();
+  console.log(music);
+}
+
+function theme3_Song() {
+  music.setAttribute("src", "/sounds/background/theme3.mp3");
+  music.loop = true;
+  music.play();
+  console.log(music);
+}
 function mute_Song() {
   music.pause();
   music.currentTime = 0;
@@ -46,7 +66,7 @@ function finish_Sound() {
   finish.play();
 }
 function flip_Sound() {
-  let flip = new Aufdio("/sounds/Games/flip.mp3");
+  let flip = new Audio("/sounds/Games/flip.mp3");
   flip.play();
 }
 function button_Sound() {

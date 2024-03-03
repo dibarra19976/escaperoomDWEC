@@ -2,6 +2,7 @@ function startMemory(game) {
   const cardsDiv = document.querySelector(".cards");
   if (!game.beaten) {
     closeEndedPopup();
+    let attempts = 1;
     let timeout;
     const MIN = 4; //3
     const MAX = game.difficulty; //22
@@ -54,7 +55,6 @@ function startMemory(game) {
         if (flippedCards.length >= 2) {
           let allCards = document.querySelectorAll(".card");
           addDisable(allCards);
-          disableBack();
           let first = flippedCards[0].id;
           let second = flippedCards[1].id;
           if (first === second) {
@@ -71,20 +71,21 @@ function startMemory(game) {
             let guessedCards = document.querySelectorAll(".card-guessed");
             if (guessedCards.length === allCards.length) {
               finish_Sound();
-              showText("You won!", msg);
+              showText("Has adivinado todas las parejas!", msg);
               setBeaten(game.id);
-              setTimeout(enableBack(), 1000);
+              calculateScore(attempts);
             } else {
               correct_Sound();
-              showText("You guessed a pair correctly!", msg);
+              showText("Has adivinado correctamente una pareja!", msg);
             }
           } else {
             for (let i = 0; i < flippedCards.length; i++) {
-              showText("You guessed it wrong", msg);
+              showText("No has adivinado nuinguna pareja", msg);
               setTimeout(function () {
                 wrong_Sound();
                 flippedCards[i].classList.remove("card-flipped");
                 removeDisable(allCards);
+                attempts++;
               }, 600);
             }
           }

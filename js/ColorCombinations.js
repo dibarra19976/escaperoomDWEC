@@ -1,5 +1,7 @@
 function startColorCombination(game) {
   if (!game.beaten) {
+    closeEndedPopup();
+    let attempts = 1;
     let elcrono; //= setInterval(advance, 300);
     const msg = document.getElementById("colors").querySelector(".message");
     let timeout;
@@ -62,6 +64,7 @@ function startColorCombination(game) {
           finish_Sound();
           showText(`Has terminado!`, msg);
           setBeaten(id);
+          calculateScore(attempts);
         } else {
           correct_Sound();
           colorsQty++;
@@ -75,6 +78,7 @@ function startColorCombination(game) {
           turno();
         }
       } else {
+        attempts++;
         wrong_Sound();
         speed = minspeed;
         correctSequences = 0;
@@ -86,7 +90,6 @@ function startColorCombination(game) {
     }
 
     function showColor() {
-      disableBack();
       showText("‎ ", msg);
       let mainColor = document
         .getElementById("colors")

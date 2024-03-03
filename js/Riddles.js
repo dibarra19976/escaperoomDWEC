@@ -1,5 +1,7 @@
 function startRiddle(game) {
   if (!game.beaten) {
+    closeEndedPopup();
+    let attempts = 1;
     let json;
     let riddle;
     let difficulty = game.difficulty;
@@ -43,9 +45,13 @@ function startRiddle(game) {
     function checkAnswer(riddle, answer) {
       if (riddle.answer.toLowerCase() === answer.toLowerCase()) {
         correct_Sound();
+        if(!game.beaten){
+          calculateScore(attempts);
+        }
         setBeaten(id);
       }
       else{
+        attempts++;
         wrong_Sound();
       }
     }

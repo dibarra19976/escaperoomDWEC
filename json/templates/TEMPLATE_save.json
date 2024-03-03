@@ -1,5 +1,11 @@
 {
+  "level" : 1,
   "currentFlag": 0,
-  "time" : 111,
-  "score": 111
+  "time" : {
+    "hours": 0,
+    "minutes" : 0,
+    "seconds" : 0,
+    "milliseconds" : 0
+  },
+  "score": 0
 }

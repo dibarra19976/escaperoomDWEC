@@ -29,6 +29,14 @@ function theme3_Song() {
   music.play();
   console.log(music);
 }
+
+function end_Song() {
+  music.setAttribute("src", "/sounds/background/end.mp3");
+  music.loop = true;
+  music.play();
+  console.log(music);
+}
+
 function mute_Song() {
   music.pause();
   music.currentTime = 0;

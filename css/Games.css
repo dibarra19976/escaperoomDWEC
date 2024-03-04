@@ -27,8 +27,9 @@
 }
 
 .game {
-  background-color: rgba(106, 106, 106, 0.294);
-  padding: 60px;
+  box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.2);  
+  background: rgb(0,0,0);
+  background: linear-gradient(190deg, rgba(0,0,0,0.9331933456976541) 0%, rgba(0,0,0,0.5802521692270659) 100%);   padding: 60px;
   border-radius: 30px;
   width: 80%;
   height: 80%;

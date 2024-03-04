@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Main.css" />
+    <link rel="stylesheet" href="/css/EndScreen.css" />
+    <title>END</title>
+  </head>
+  <body>
+     <!-- NavBar -->
+     <div class="nav">
+      <a href="/" class="left">Inicio</a>
+      <a href="/html/LogIn.html" class="right logedout">Iniciar Sesion</a>
+      <a href="/html/Register.html" class="right logedout">Registrarse</a>
+      <a href="#" class="right logedin closed" id="logout">Cerrar Sesion</a>
+      <a href="/html/Profile.html" class="right closed logedin"
+        >Modificar Perfil</a
+      >
+      <span class="right" id="mute"><i class="bi bi-volume-up-fill"></i></span>
+    </div>  
+    <div class="ranking">
+      <h1>¡HAS GANADO!</h1>
+      <table id="table">
+        <tr>
+          <th>RANK</th>
+          <th>USUARIO</th>
+          <th>PUNTUACION</th>
+          <th>TIEMPO</th>
+        </tr>
+      </table>
+    </div>
+    <audio src="" id="music"></audio>
+    <script src="/js/Sounds.js"></script>
+    <script src="/js/EndScreen.js"></script>
+    <script></script>
+  </body>
+</html>

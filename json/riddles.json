@@ -1,210 +1,95 @@
 {
-    "1": [
-        {
-            "riddle": "¿Qué tiene patas pero no puede caminar?",
-            "answer": "mesa",
-            "hint": "Se utiliza para colocar objetos encima."
-        },
-        {
-            "riddle": "¿Qué es lo que cuanto más seca está, más mojada se vuelve?",
-            "answer": "toalla",
-            "hint": "Se usa para secarse después de ducharse."
-        },
-        {
-            "riddle": "Tiene dientes y no puede comer, ¿qué es?",
-            "answer": "peine",
-            "hint": "Se utiliza para desenredar el cabello."
-        },
-        {
-            "riddle": "¿Qué es tan frágil que al caer al suelo se rompe pero nunca se le nota?",
-            "answer": "silencio",
-            "hint": "Es la ausencia de ruido."
-        },
-        {
-            "riddle": "¿Qué cosa tiene la cama y no duerme?",
-            "answer": "colchón",
-            "hint": "Es donde uno se recuesta para dormir."
-        },
-        {
-            "riddle": "¿Qué le dice una iguana a su hermana gemela?",
-            "answer": "iguana",
-            "hint": "Es una palabra que se repite."
-        },
-        {
-            "riddle": "¿Qué cosa tiene las patas arriba?",
-            "answer": "vaso",
-            "hint": "Se utiliza para contener líquidos."
-        },
-        {
-            "riddle": "¿Qué cosa tiene barba y no es hombre?",
-            "answer": "cabra",
-            "hint": "Es un animal doméstico."
-        },
-        {
-            "riddle": "¿Qué es lo que alumbra sin luz?",
-            "answer": "linterna",
-            "hint": "Se utiliza para iluminar en la oscuridad."
-        },
-        {
-            "riddle": "¿Qué cosa sale de la tierra, entra al agua y no se moja?",
-            "answer": "sol",
-            "hint": "Es una estrella que brilla en el cielo."
-        }
-    ],
-    "2": [
-        {
-            "riddle": "¿Qué es lo que no tiene fin y empieza en el medio?",
-            "answer": "círculo",
-            "hint": "Es una figura geométrica."
-        },
-        {
-            "riddle": "Siempre sube y nunca baja. ¿Qué es?",
-            "answer": "edad",
-            "hint": "Es un concepto relacionado con el tiempo."
-        },
-        {
-            "riddle": "¿Qué corre sin tener piernas?",
-            "answer": "río",
-            "hint": "Fluye entre las montañas."
-        },
-        {
-            "riddle": "Blanco por dentro, verde por fuera. Si quieres que te lo diga, espera.",
-            "answer": "pera",
-            "hint": "Es una fruta común."
-        },
-        {
-            "riddle": "¿Qué es lo que es tan liviano que incluso el mundo más fuerte no puede sostenerlo por mucho tiempo?",
-            "answer": "aliento",
-            "hint": "Es algo que todos los seres vivos hacen."
-        },
-        {
-            "riddle": "¿Qué cosa tiene las patas arriba?",
-            "answer": "vaso",
-            "hint": "Se usa para beber."
-        },
-        {
-            "riddle": "¿Qué es tan frágil que al caer al suelo se rompe pero nunca se le nota?",
-            "answer": "silencio",
-            "hint": "Es la ausencia de ruido."
-        },
-        {
-            "riddle": "¿Qué cosa se puede oír pero no ver?",
-            "answer": "voz",
-            "hint": "Se produce al hablar."
-        },
-        {
-            "riddle": "¿Qué es lo que todos compramos pero nunca usamos?",
-            "answer": "ataúd",
-            "hint": "Se utiliza para un propósito específico después de la muerte."
-        },
-        {
-            "riddle": "Siempre estoy delante del resto, pero nunca estoy detrás. ¿Qué soy?",
-            "answer": "futuro",
-            "hint": "Tiene que ver con lo que está por venir."
-        }
-    ],
-    "3": [
-        {
-            "riddle": "Tiene ojos y no puede ver, tiene agua y no puede beber. ¿Qué es?",
-            "answer": "agujero",
-            "hint": "Es una apertura en una superficie."
-        },
-        {
-            "riddle": "¿Qué se puede tener antes de que se haga, se tome o se conozca?",
-            "answer": "sueño",
-            "hint": "Es algo que imaginas mientras duermes."
-        },
-        {
-            "riddle": "¿Qué tiene dientes y no puede comer?",
-            "answer": "peine",
-            "hint": "Se utiliza para peinarse."
-        },
-        {
-            "riddle": "¿Qué cosa tiene la cama y no duerme?",
-            "answer": "colchón",
-            "hint": "Es donde uno se recuesta para dormir."
-        },
-        {
-            "riddle": "¿Qué cosa tiene barba y no es hombre?",
-            "answer": "cabra",
-            "hint": "Es un animal doméstico."
-        },
-        {
-            "riddle": "¿Qué es lo que cuanto más seca está, más mojada se vuelve?",
-            "answer": "toalla",
-            "hint": "Se utiliza para secarse después de ducharse."
-        },
-        {
-            "riddle": "¿Qué cosa sale de la tierra, entra al agua y no se moja?",
-            "answer": "sol",
-            "hint": "Es una estrella que brilla en el cielo."
-        },
-        {
-            "riddle": "Siempre sube y nunca baja. ¿Qué es?",
-            "answer": "edad",
-            "hint": "Es un concepto relacionado con el tiempo."
-        },
-        {
-            "riddle": "¿Qué cosa tiene las patas arriba?",
-            "answer": "vaso",
-            "hint": "Se utiliza para contener líquidos."
-        },
-        {
-            "riddle": "Blanco por dentro, verde por fuera. Si quieres que te lo diga, espera.",
-            "answer": "pera",
-            "hint": "Es una fruta común."
-        }
-    ],
-    "4": [
-        {
-            "riddle": "¿Qué tiene patas pero no puede caminar?",
-            "answer": "mesa",
-            "hint": "Se utiliza para colocar objetos encima."
-        },
-        {
-            "riddle": "¿Qué es lo que no tiene fin y empieza en el medio?",
-            "answer": "círculo",
-            "hint": "Es una figura geométrica."
-        },
-        {
-            "riddle": "¿Qué cosa se puede oír pero no ver?",
-            "answer": "voz",
-            "hint": "Se produce al hablar."
-        },
-        {
-            "riddle": "¿Qué es tan frágil que al caer al suelo se rompe pero nunca se le nota?",
-            "answer": "silencio",
-            "hint": "Es la ausencia de ruido."
-        },
-        {
-            "riddle": "¿Qué es lo que todos compramos pero nunca usamos?",
-            "answer": "ataúd",
-            "hint": "Se utiliza para un propósito específico después de la muerte."
-        },
-        {
-            "riddle": "¿Qué es lo que cuanto más seca está, más mojada se vuelve?",
-            "answer": "toalla",
-            "hint": "Se utiliza para secarse después de ducharse."
-        },
-        {
-            "riddle": "¿Qué es lo que es tan liviano que incluso el mundo más fuerte no puede sostenerlo por mucho tiempo?",
-            "answer": "aliento",
-            "hint": "Es algo que todos los seres vivos hacen."
-        },
-        {
-            "riddle": "¿Qué se puede tener antes de que se haga, se tome o se conozca?",
-            "answer": "sueño",
-            "hint": "Es algo que imaginas mientras duermes."
-        },
-        {
-            "riddle": "¿Qué cosa sale de la tierra, entra al agua y no se moja?",
-            "answer": "sol",
-            "hint": "Es una estrella que brilla en el cielo."
-        },
-        {
-            "riddle": "¿Qué cosa tiene barba y no es hombre?",
-            "answer": "cabra",
-            "hint": "Es un animal doméstico."
-        }
-    ]
+  "1": [
+    {
+      "riddle": "¿Qué tiene patas pero no puede caminar?",
+      "answer": "mesa",
+      "hint": "Se utiliza para colocar objetos encima."
+    },
+    {
+      "riddle": "¿Qué es lo que cuanto más seca está, más mojada se vuelve?",
+      "answer": "toalla",
+      "hint": "Se usa para secarse después de ducharse."
+    },
+    {
+      "riddle": "¿Qué tiene dientes pero no puede masticar?",
+      "answer": "peine",
+      "hint": "Se utiliza para peinar el cabello."
+    },
+    {
+      "riddle": "¿Qué es lo que se usa para escribir y no tiene tinta ni pluma?",
+      "answer": "teclado",
+      "hint": "Se utiliza junto con un ordenador."
+    },
+    {
+      "riddle": "¿Qué tiene agujas pero no puede coser?",
+      "answer": "reloj",
+      "hint": "Se utiliza para medir el tiempo."
+    },
+    {
+      "riddle": "Nombre del personaje antropomorfo, insignia de una empresa de entretenimiento y animación.",
+      "answer": "mickey",
+      "hint": "Es un roedor"
+    }
+  ],
+  "2": [
+    {
+      "riddle": "¿Qué es lo que no tiene fin y empieza en el medio?",
+      "answer": "círculo",
+      "hint": "Es una figura geométrica."
+    },
+    {
+      "riddle": "Siempre sube y nunca baja. ¿Qué es?",
+      "answer": "edad",
+      "hint": "Es un concepto relacionado con el tiempo."
+    },
+    {
+      "riddle": "¿Qué puede tener ramas pero no es un árbol?",
+      "answer": "río",
+      "hint": "Fluye a través de la tierra."
+    },
+    {
+      "riddle": "¿Qué es lo que se rompe cada vez que se nombra?",
+      "answer": "silencio",
+      "hint": "Es una cualidad del sonido."
+    },
+    {
+      "riddle": "¿Qué se puede llevar pero no se puede tocar?",
+      "answer": "rumor",
+      "hint": "Es algo intangible."
+    }
+  ],
+  "3": [
+    {
+      "riddle": "Tiene ojos y no puede ver, tiene agua y no puede beber. ¿Qué es?",
+      "answer": "agujero",
+      "hint": "Es una apertura en una superficie."
+    },
+    {
+      "riddle": "¿Qué se puede tener antes de que se haga, se tome o se conozca?",
+      "answer": "sueño",
+      "hint": "Es algo que imaginas mientras duermes."
+    },
+    {
+      "riddle": " Elemento químico metálico del cual unos de los navegadores web mas usados consigue su nombre",
+      "answer": "cromo",
+      "hint": "La misma palabra tambien describe a un tipo de coleccionable en forma de tarjeta."
+    }
+  ],
+  "4": [
+    {
+      "riddle": "¿Qué es lo que no tiene fin y empieza en el medio?",
+      "answer": "círculo",
+      "hint": "Es una figura geométrica."
+    },
+    {
+      "riddle": "Puedo ser largo o corto, pero nunca puedo ser alto. ¿Qué soy?",
+      "answer": "el tiempo",
+      "hint": "Es una medida abstracta que se utiliza para describir la duración de los eventos."
+    },
+    {
+      "riddle": "¿Qué nombre utiliza el protagonista de una serie de ciencia ficción británica muy longeva?",
+      "answer": "doctor",
+      "hint": "Who."
+    }
+  ]
 }

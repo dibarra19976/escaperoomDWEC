@@ -1,40 +1,67 @@
 {
-  "games": {
-    "1": {
+  "games":  [
+    {
+      "id": 0,
+      "type": "text",
+      "content": "Hoy te toca volver a hacer tu trabajo.\n\n Esta vez, parece que estais trabajanado en una zona urbana. \n\n Puede que te paguen menos, pero al menos  estás relativamente a salvo.",
+      "beaten": false
+    },
+    {
       "id": 1,
-      "type": "memory",
-      "difficulty": 5,
+      "type": "text",
+      "content": "Gracias a las cámaras que lleva el equipo de expedición, puedes observar el sitio de las instalaciones.\n\n Esta vez, parece un templo perdido dentro de una cueva con algo de luz.",
+      "beaten": false
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "content": "Ahora ya puedes empezar con tu trabajo y desbloquar las puertas.",
+      "beaten": false
+    },
+    {
+      "id": 3,
+      "type": "timing",
+      "difficulty": 1,
       "beaten": false,
       "state": null
     },
-    "2": {
-      "id": 2,
-      "type": "timing",
-      "difficulty": 4,
-      "beaten": false
-    },
-    "3": {
-      "id": 3,
-      "type": "colors",
-      "difficulty": 4,
-      "beaten": false
-    },
-    "4": {
+    {
       "id": 4,
       "type": "riddle",
-      "difficulty": 4,
       "beaten": false,
-      "hintUsed" : false
-    }
-  },
-  "flags": [
-    {
-      "type": "game",
-      "id": 1
+      "difficulty": 1,
+      "hintUsed": false,
+      "index": null
     },
     {
+      "id": 5,
       "type": "text",
-      "text": "TextoTextoTextoTexto"
+      "content": "¡Has conseguido abrir una puerta! Pero aun queda una por abrir.",
+      "beaten": false
+    },
+    
+    {
+      "id": 3,
+      "type": "timing",
+      "difficulty": 2,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 4,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 2,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "content": "¡Has conseguido abrir las dos puertas! \n\n ¡Felicidades!",
+      "beaten": false
     }
-  ]
+  ],
+  "background" : "/img/background2.png",
+  "music" : "theme1_Song();"
 }

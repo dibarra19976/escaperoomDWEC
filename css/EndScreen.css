@@ -1,0 +1,62 @@
+.ranking{
+    font-family: 'IBM Plex Mono', monospace; 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ranking h1{
+    font-size: 50pt;
+    letter-spacing: 10px;
+    padding: 50px;
+    animation: redglow 3s infinite;
+}
+
+.ranking table{
+    border: none;
+    border-collapse: collapse;
+    box-shadow: 0px 0px 30px  6px rgba(255, 255, 255, 0.256);
+}
+
+.ranking th{
+    background-color: white;
+    color: black;
+    font-size: 17pt;
+    padding: 20px;
+}
+
+.ranking td{
+    border-top: 2px white solid;
+    text-align: center;
+    font-size: 17pt;
+    padding: 20px;
+    transition: 0.3s ease;
+    background-color: black;
+    width: 200px;
+}
+
+.ranking tr td:first-of-type {
+    width: 30px;
+}
+
+.ranking tr:hover td{
+    transform: 0.3s ease;
+    font-weight: 800;
+    color: black;
+    background-color: white;
+}
+
+.ranking tr.current td{
+    color: rgb(141, 228, 255);
+}
+
+.ranking tr.current:hover td{
+    transform: 0.3s ease;
+    font-weight: 800;
+    background-color: rgb(141, 228, 255);
+    color: rgb(255, 255, 255);
+}
+
+ 

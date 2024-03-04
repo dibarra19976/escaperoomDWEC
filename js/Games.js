@@ -175,7 +175,7 @@ function quitPopUpHide() {
   startChrono();
 }
 
-function exit(){
+function exit() {
   save();
   location.href = "/";
 }
@@ -321,12 +321,13 @@ function readText(game) {
 }
 
 function advanceFlag() {
-  if (gamesObj.length-1 > currentGame) {
+  if (gamesObj.length - 1 > currentGame) {
     currentGame++;
     openMinigame(currentGame);
     save();
   } else {
     console.log("ENDED");
+    endGame();
   }
 }
 
@@ -351,6 +352,7 @@ function startLevel() {
 
 function loadLevel(file) {
   loadDoc((response) => {
+    localStorage.setItem("gameURL", file);
     let json = JSON.parse(response);
     gamesObj = json.games;
     eval(json.music);
@@ -401,4 +403,14 @@ function save() {
     localStorage.setItem("users", JSON.stringify(allusers));
     localStorage.setItem("loggedUser", JSON.stringify(userLogged));
   }
+}
+
+function endGame() {
+  save();
+  localStorage.setItem("gameURL", globalUrl);
+  let logged = localStorage.getItem("loggedUser");
+  if (logged !== null) {
+    localStorage.setItem("addToRanking", "true");
+  }
+  location.href = "/html/EndScreen.html";
 }

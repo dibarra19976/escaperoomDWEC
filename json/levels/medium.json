@@ -20,35 +20,45 @@
     },
     {
       "id": 3,
-      "type": "memory",
-      "difficulty": 7,
+      "type": "timing",
+      "difficulty": 1,
       "beaten": false,
       "state": null
-    },
-    {
-      "id": 2,
-      "type": "timing",
-      "difficulty": 4,
-      "beaten": false
-    },
-    {
-      "id": 3,
-      "type": "colors",
-      "beaten": false,
-      "difficulty": 1
     },
     {
       "id": 4,
       "type": "riddle",
       "beaten": false,
-      "difficulty": 4,
+      "difficulty": 1,
       "hintUsed": false,
       "index": null
     },
     {
       "id": 5,
       "type": "text",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "content": "¡Has conseguido abrir una puerta! Pero aun queda una por abrir.",
+      "beaten": false
+    },
+    
+    {
+      "id": 3,
+      "type": "timing",
+      "difficulty": 2,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 4,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 2,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "content": "¡Has conseguido abrir las dos puertas! \n\n ¡Felicidades!",
       "beaten": false
     }
   ],

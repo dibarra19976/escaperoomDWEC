@@ -138,7 +138,7 @@ function startTiming(game) {
         if (repeats == hits) {
           finish_Sound();
           clearInterval(elcrono);
-          showText("Has acabado de abrir la puerta", msg);
+          showText("Has terminado!", msg);
           setBeaten(id);
           calculateScore(attempts);
         } else {

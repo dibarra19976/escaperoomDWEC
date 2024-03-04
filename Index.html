@@ -7,29 +7,61 @@
     <title>Main Menu</title>
   </head>
   <body id="mainMenu">
+    <div id="anonymousUser" class="closed">
+      <div>
+        <button id="back" onclick="anonymousPopUpHide(); this.blur; ">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <h1>¡Estas a punto de empezar una partida anonimamente!</h1>
+        <h3>No podras guardar tu progreso, y no se guardara tu puntuacion.</h3>
+        <div>
+          <button class="continue">Continuar</button>
+          <button onclick="anonymousPopUpHide(); this.blur; ">Volver</button>
+        </div>
+      </div>
+    </div>
+    <div id="overwriteSave" class="closed">
+      <div>
+        <button id="back" onclick="overwriteSavePopUpHide(); this.blur; ">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <h1>¡Ya tienes una partida guardada!</h1>
+        <h3>Si empiezas otra, el progreso de la anterior sera eliminado.</h3>
+        <div>
+          <button class="continue">Continuar</button>
+          <button onclick="overwriteSavePopUpHide(); this.blur; ">
+            Volver
+          </button>
+        </div>
+      </div>
+    </div>
     <!-- NavBar -->
     <div class="nav">
       <a href="/" class="left">Inicio</a>
       <a href="/html/LogIn.html" class="right logedout">Iniciar Sesion</a>
       <a href="/html/Register.html" class="right logedout">Registrarse</a>
       <a href="#" class="right logedin closed" id="logout">Cerrar Sesion</a>
-      <a href="/html/Profile.html" class="right closed logedin" >Modificar Perfil</a>
-      <span class="right " id="mute"><i class="bi bi-volume-up-fill"></i></span>
+      <a href="/html/Profile.html" class="right closed logedin"
+        >Modificar Perfil</a
+      >
+      <span class="right" id="mute"><i class="bi bi-volume-up-fill"></i></span>
     </div>
     <!-- Main Menu -->
     <div class="Main">
-      <div class="logo"><img src="/img/LOGO.png" alt="Logo" id="logo"></div>
+      <div class="logo"><img src="/img/LOGO.png" alt="Logo" id="logo" /></div>
       <div class="menu">
         <ul>
-          <li id="continue" class="closed">Continuar</li>
-          <li>Jugar el nivel 1 (Normal)</li>
+          <li id="continue" class="closed" class="continue" onclick="continueGame()">Continuar</li>
+          <li onclick="newGame('/json/templates/TEMPLATE_level.json')">
+            Jugar el nivel 1 (Normal)
+          </li>
           <li>Jugar el nivel 2 (Dificil)</li>
           <li>Jugar el nivel 3 (Extremo)</li>
           <li>Creditos & mas info</li>
         </ul>
       </div>
     </div>
-    <audio  src="" id="music"></audio>
+    <audio src="" id="music"></audio>
     <script src="/js/Sounds.js"></script>
     <script src="/js/Main.js"></script>
   </body>

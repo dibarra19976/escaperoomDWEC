@@ -152,3 +152,81 @@ body {
   100% {
   }
 }
+
+
+ 
+#anonymousUser, #overwriteSave {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.51);
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+#anonymousUser > div, #overwriteSave > div {
+  flex-direction: column;
+  border: 4px solid white;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  background: black;
+  text-align: center;
+  justify-content: center;
+}
+
+#anonymousUser > div > h1, #anonymousUser > div > h3, #overwriteSave > div > h1, #overwriteSave > div > h3 {
+  padding-bottom: 100px;
+  padding-top: 70px;
+  width: 100%;
+}
+
+#anonymousUser #back, #overwriteSave #back  {
+  background: none;
+  outline: none;
+  color: white;
+  margin-right: auto;
+  position: absolute;
+  right: 20px;
+}
+
+#anonymousUser #back:hover, #overwriteSave #back:hover {
+  font-size: 17pt;
+  outline: none;
+}
+
+
+#anonymousUser button, #overwriteSave button   {
+  color: black;
+  background-color: white;
+  border: none;
+  padding: 20px;
+  font-size: 15pt;
+  transition: 0.2s;
+  font-family: 'IBM Plex Mono', monospace !important;
+}
+
+#anonymousUser button:hover, #overwriteSave button:hover   {
+  background-color: black;
+  outline: 2px solid white;
+  color: white;
+  font-weight: 700;
+}
+
+#anonymousUser button:active, #overwriteSave button:active   {
+  box-shadow: none;
+}
+
+#anonymousUser.closed button, #overwriteSave.closed button  {
+  transition: 0s !important;
+}
+
+.fadeIn{
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

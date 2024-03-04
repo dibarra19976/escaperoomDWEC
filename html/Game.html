@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/Main.css" />
+    <link rel="stylesheet" href="/css/Memory.css" />
+    <link rel="stylesheet" href="/css/Timing.css" />
+    <link rel="stylesheet" href="/css/ColorCombinations.css" />
+    <link rel="stylesheet" href="/css/Riddles.css" />
+    <link rel="stylesheet" href="/css/Games.css" />
+    <title>Game Test</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- POPUP DE SALIR -->
+      <div id="quitPopUp" class="closed">
+        <div>
+          <button id="back" onclick="quitPopUpHide(); this.blur; ">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <h1>Estas a punto de salir de la partida</h1>
+          <h4>Si has iniciado sesion se guardara la partida.</h4>
+          <div>
+            <button>Salir</button>
+            <button>Cancelar</button>
+          </div>
+        </div>
+      </div>
+      <!-- POPUP DE PISTAS -->
+      <div id="hintPopUp" class="closed">
+        <div>
+          <button id="back" onclick="hintPopUpHide(); this.blur; ">
+            <i class="bi bi-x-lg"></i>
+          </button>
+          <p>Pista pista pista ding ding ding</p>
+        </div>
+      </div>
+      <!-- DIV INTERFAZ DE USUARIO -->
+      <div class="ui">
+        <button id="hint" title="Pistas" onclick="hintPopUp()">
+          <i class="bi bi-question-lg"></i>
+        </button>
+        <p id="timer">00:00:00</p>
+        <p id="score">Puntuacion: <span>000</span></p>
+        <p id="player">PLAYER: <span>Anonymous</span></p>
+        <button id="quit" onclick="quitPopUp()" title="Salir">
+          <i class="bi bi-box-arrow-left"></i>
+        </button>
+        <button id="mute"><i class="bi bi-volume-up-fill"></i></button>
+      </div>
+      <!-- POPUP / JUEGOS -->
+      <div class="popup closed" id="games">
+        <!-- <button id="backButton" onclick="goBack(); this.blur; ">BACK</button> -->
+        <!-- DIV DE JUEGO YA TERMINADO -->
+        <div id="ended" class="closed">
+          <p>Ya has completado esta prueba.</p>
+        </div>
+        <!-- DIV MEMORY -->
+        <div id="memory" class="closed minigame">
+          <div class="content">
+            <div class="game">
+              <h1 class="message hide">1</h1>
+            <div class="cards"></div>
+            </div>
+          </div>
+        </div>
+        <!-- DIV TIMING -->
+        <div id="timing" class="closed minigame">
+          <div class="content">
+            <div class="game">
+              <h1 class="message hide">1</h1>
+              <div class="gameElement" id="gameElement"></div>
+            </div>
+          </div>
+        </div>
+        <!-- DIV COLORS -->
+        <div id="colors" class="closed minigame">
+          <div class="content">
+            <div class="game">
+              <h1 class="message hide">1</h1>
+              <div class="mainColor" id="gameElement"></div>
+              <div class="buttons" id="buttons"></div>
+            </div>
+          </div>
+        </div>
+        <!-- DIV RIDDLE -->
+        <div id="riddle" class="minigame closed">
+          <div class="content">
+            <div class="game">
+              <h1 class="riddleText">Advina adivinanza</h1>
+              <input type="text" id="userGuess" />
+              <button>Continuar <i class="bi bi-caret-right-fill"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- DIV TEXT -->
+        <div id="descriptionText" class="closed minigame">
+          <div class="content">
+            <div class="text">
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo libero, veniam eum expedita nesciunt repudiandae, perferendis necessitatibus harum quasi praesentium impedit culpa temporibus porro quibusdam magnam! Corporis ratione est rem!</p>
+              <button onclick="advanceFlag()">Continuar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DIV BACKDROP -->
+      <div class="world">
+        <img src="/img/background2.png" alt="">
+      </div>
+      <!-- <div>
+        <button id="iniciar" onclick="openMinigame(0)">Iniciar memory</button>
+        <button id="iniciar" onclick="openMinigame(1)">Iniciar timing</button>
+        <button id="iniciar" onclick="openMinigame(2)">
+          ColorCombinations
+        </button>
+        <button id="iniciar" onclick="openMinigame(3)">Riddle</button>
+        <button id="iniciar" onclick="openMinigame(4)">Texto</button>
+      </div> -->
+    </div>
+    <audio src="" id="music"></audio>
+    <script src="/js/Sounds.js"></script>
+    <script src="/js/Games.js"></script>
+    <script src="/js/Memory.js"></script>
+    <script src="/js/Timing.js"></script>
+    <script src="/js/Riddles.js"></script>
+    <script src="/js/ColorCombinations.js"></script>
+    <script>
+      // loadLevel("/json/templates/TEMPLATE_level.json");
+      startLevel();
+    </script>
+  </body>
+</html>

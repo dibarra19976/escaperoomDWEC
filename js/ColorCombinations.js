@@ -113,7 +113,6 @@ function startColorCombination(game) {
         mainColor.classList.remove("color-" + colorSequence[currentColor - 1]);
         addButtons();
         clearInterval(elcrono);
-        enableBack();
       }
     }
 

@@ -34,6 +34,6 @@
       "beaten": false
     }
   ],
-  "background" : "/img/background.jpg",
-  "music" : "theme2_Song();"
+  "background" : "/img/background2.png",
+  "music" : "theme1_Song();"
 }

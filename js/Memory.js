@@ -80,7 +80,7 @@ function startMemory(game) {
             }
           } else {
             for (let i = 0; i < flippedCards.length; i++) {
-              showText("No has adivinado nuinguna pareja", msg);
+              showText("No has adivinado ninguna pareja", msg);
               setTimeout(function () {
                 wrong_Sound();
                 flippedCards[i].classList.remove("card-flipped");

@@ -1,0 +1,36 @@
+{
+  "games":  [
+    {
+      "id": 0,
+      "type": "text",
+      "content": "0Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "beaten": false
+    },
+    {
+      "id": 1,
+      "type": "text",
+      "content": "1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "beaten": false
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "content": "2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "beaten": false
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "content": "3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "beaten": false
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "content": "4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+      "beaten": false
+    }
+  ],
+  "background" : "/img/background2.png",
+  "music" : "theme1_Song();"
+}

@@ -1,7 +1,8 @@
 let popupOpen = false;
-let currentGame = null;
+let currentGame = 0;
 let timer;
 let score = 0;
+let globalUrl = "";
 // ELEMENTOS
 const popup = document.getElementById("games");
 let timing = document.getElementById("timing");
@@ -41,7 +42,8 @@ let gamesObj = [
   {
     id: 4,
     type: "text",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quia placeat sint, necessitatibus, a repellat ducimus perspiciatis rerum sunt impedit corrupti qui praesentium! Doloremque modi ad quae animi ipsa expedita!",
     beaten: false,
   },
 ];
@@ -179,10 +181,15 @@ function hintPopUp() {
     type = gamesObj[currentGame].type;
     switch (type) {
       case "memory":
+        text.innerText = "Encuentra todas las parejas de cartas";
         break;
       case "timing":
+        text.innerText =
+          "Presiona el boton en el momento correcto. Hazlo varias veces seguidas.";
         break;
       case "colors":
+        text.innerText =
+          "Acierta la combinacion de colores mostrada por pantalla.";
         break;
       case "riddle":
         loadDoc((response) => {
@@ -298,56 +305,94 @@ function calculateScore(attempts) {
   updateScore(Math.max(puntajeFinal, 0));
 }
 
-
-
 function readText(game) {
   if (!game.beaten) {
     closeEndedPopup();
     descriptionText.querySelector("p").innerText = game.content;
-    setBeaten(game.id);
-    console.log(game);
   } else {
     openEndedPopup();
   }
 }
 
-function advanceFlag(){
-  currentGame++;
-  openMinigame(currentGame);
+function advanceFlag() {
+  if (gamesObj.length-1 > currentGame) {
+    currentGame++;
+    openMinigame(currentGame);
+    save();
+  } else {
+    console.log("ENDED");
+  }
 }
 
-function loadLevel(file){
-  openMinigame(0);
+function startLevel() {
+  let logged = localStorage.getItem("loggedUser");
+  if (logged !== null) {
+    let user = JSON.parse(logged);
+    if (user.save == null) {
+      globalUrl = localStorage.getItem("gameURL");
+      loadLevel(globalUrl);
+      let userSpan = document.getElementById("player").querySelector("span");
+      userSpan.innerText = user.user;
+      save();
+    } else {
+      loadSave();
+    }
+  } else {
+    globalUrl = localStorage.getItem("gameURL");
+    loadLevel(globalUrl);
+  }
+}
+
+function loadLevel(file) {
   loadDoc((response) => {
     let json = JSON.parse(response);
     gamesObj = json.games;
     eval(json.music);
     setBackground(json.background);
-    
-    currentGame = 0;
-
     openMinigame(currentGame);
     startChrono();
   }, file);
 }
 
-function setBackground(url){
+function setBackground(url) {
   let bg = document.querySelector(".world").querySelector("img");
   bg.setAttribute("src", url);
 }
 
-function loadSave(){
+function loadSave() {
   let logged = localStorage.getItem("loggedUser");
   if (logged !== null) {
+    let user = JSON.parse(logged);
     let userSpan = document.getElementById("player").querySelector("span");
-    userSpan.innerText = JSON.parse(logged).user;
+    userSpan.innerText = user.user;
+    score = user.save.score;
+    globalUrl = user.save.level;
+    currentGame = user.save.currentFlag;
+    loadTimeChrono(user.save.time);
+    updateScore(score);
+    loadLevel(globalUrl);
   }
 }
 
-function save(){
+function save() {
   let logged = localStorage.getItem("loggedUser");
   if (logged !== null) {
-    let userSpan = document.getElementById("player").querySelector("span");
-    userSpan.innerText = JSON.parse(logged).user;
+    let save = {
+      level: globalUrl,
+      currentFlag: currentGame,
+      time: {
+        hours: mifecha.getHours(),
+        minutes: mifecha.getMinutes(),
+        seconds: mifecha.getSeconds(),
+        milliseconds: mifecha.getMilliseconds(),
+      },
+      score: score,
+    };
+    let userLogged = JSON.parse(logged);
+    userLogged.save = save;
+    let allusers = JSON.parse(localStorage.getItem("users"));
+    allusers[userLogged.email] = userLogged;
+    localStorage.setItem("users", JSON.stringify(allusers));
+    localStorage.setItem("loggedUser", JSON.stringify(userLogged));
   }
 }

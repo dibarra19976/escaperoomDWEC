@@ -1,5 +1,5 @@
 {
-  "level" : 1,
+  "level" : "/json/templates/TEMPLATE_level.json",
   "currentFlag": 0,
   "time" : {
     "hours": 0,

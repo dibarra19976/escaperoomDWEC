@@ -3,27 +3,27 @@
     {
       "id": 0,
       "type": "memory",
-      "difficulty": 5,
+      "difficulty": 6,
       "beaten": false,
       "state": null
     },
     {
       "id": 1,
       "type": "timing",
-      "difficulty": 4,
+      "difficulty": 1,
       "beaten": false
     },
     {
       "id": 2,
       "type": "colors",
       "beaten": false,
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "id": 3,
       "type": "riddle",
       "beaten": false,
-      "difficulty": 4,
+      "difficulty": 1,
       "hintUsed": false,
       "index": null
     },
@@ -34,6 +34,6 @@
       "beaten": false
     }
   ],
-  "background" : "/img/background2.png",
-  "music" : "theme1_Song();"
+  "background" : "/img/background3.jpg",
+  "music" : "theme3_Song();"
 }

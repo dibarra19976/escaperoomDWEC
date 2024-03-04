@@ -161,6 +161,7 @@ function quitPopUp() {
   let quit = document.getElementById("quitPopUp");
   quit.classList.remove("closed");
   quit.classList.add("fadeIn");
+  stopChrono();
 }
 
 //FUNCION PARA QUITAR EL POPUP DE SALIR
@@ -171,8 +172,13 @@ function quitPopUpHide() {
   let quit = document.getElementById("quitPopUp");
   quit.classList.add("closed");
   quit.classList.remove("fadeIn");
+  startChrono();
 }
 
+function exit(){
+  save();
+  location.href = "/";
+}
 //FUNCION PARA MOSTRAR EL POPUP DE PISTAS Y SU INFORMACION
 function hintPopUp() {
   select_Sound();

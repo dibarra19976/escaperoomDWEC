@@ -4,7 +4,7 @@ function startMemory(game) {
     closeEndedPopup();
     let attempts = 1;
     let timeout;
-    const MIN = 4; //3
+    const MIN = game.difficulty-3; //3
     const MAX = game.difficulty; //22
     const msg = document.getElementById("memory").querySelector(".message");
 

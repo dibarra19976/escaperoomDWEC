@@ -134,6 +134,7 @@ function register() {
       email: email.value,
       user: user.value,
       password: password.value,
+      save: null
     };
     updateUsers();
     localStorage.setItem("loggedUser", JSON.stringify(users[email.value]));

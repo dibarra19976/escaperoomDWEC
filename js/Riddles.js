@@ -5,6 +5,7 @@ loadDoc((response) => {
 
 function startRiddle(game) {
   if (!game.beaten) {
+    document.getElementById("userGuess").value = "";
     closeEndedPopup();
     let attempts = 1;
     let riddle = "";
@@ -47,7 +48,7 @@ function startRiddle(game) {
     }
 
     function checkAnswer(riddle, answer) {
-      if (riddle.answer.toLowerCase() === answer.toLowerCase()) {
+      if (riddle.answer.toLowerCase() === answer.toLowerCase().trim()) {
         correct_Sound();
         if(!game.beaten){
           calculateScore(attempts);

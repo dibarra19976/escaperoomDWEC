@@ -91,3 +91,8 @@
 .ranking table thead tr {
   display: block;
 }
+
+.w-4{
+  column-span: all !important;
+  width: 100% !important;
+}

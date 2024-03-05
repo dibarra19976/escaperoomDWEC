@@ -13,11 +13,7 @@ window.onload = (event) => {
     logedin.forEach((e) => {
       e.classList.remove("closed");
     });
-    let save = JSON.parse(logged).save;
-    if(save != null){
-      document.getElementById("continue").classList.remove("closed");
-      
-    }
+    
   }
 };
 
@@ -62,6 +58,7 @@ function showRankings() {
   let clase = "";
   rankings = JSON.parse(ranking);
   rankings[gameURL].sort(compareObjects);
+  table.innerHTML = "";
   rankings[gameURL].forEach((element) => {
     if ((JSON.stringify(element) === JSON.stringify(newScore))){
       clase = "current";
@@ -87,6 +84,10 @@ function showRankings() {
   </tr>`;
     num++;
   });
+  if(table.innerHTML == null){
+    console.log("AYO");
+  }
+
 }
 
 //añadir boton de vuelta al inicio

@@ -9,6 +9,7 @@ let users;
 let currentUser;
 //EVENT LISTENERS
 
+//event listener par ver si el usuario ha iniciado sesion y mostrar y ocultar elementos
 window.onload = (event) => {
   let logged = localStorage.getItem("loggedUser");
   if (logged !== null) {
@@ -30,6 +31,8 @@ logout.addEventListener("click", (e) => {
   location.reload();
 });
 
+
+//event listener del form para hacer las comprobaciones necesarias
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   checkLength(user, 3, 15);
@@ -82,12 +85,9 @@ function showCorrect(input) {
   formControl.className = "form-control correct";
 }
 
-// function getInputName(input) {
-//   return input.parentElement.querySelector("label").innerText;
-// }
-
 //FUNCIONES PARA EL MANEJO DE USUARIOS
 
+//funcion para actualizar el localstorage de usuarios
 function updateUsers() {
   let json = JSON.stringify(users);
   localStorage.setItem("users", json);
@@ -102,14 +102,17 @@ function getUserArray() {
   users = JSON.parse(json);
 }
 
+//funcion para guardar los cambios 
 function saveChanges() {
-  let errors = document.querySelectorAll(".error").length;
+    //mira que no haya errores con un queryselectorall
+let errors = document.querySelectorAll(".error").length;
   if (errors === 0) {
     getUserArray();
     users[currentUser.email] = {
       email: currentUser.email,
       user: user.value,
       password: password.value,
+      save: currentUser.save
     };
     updateUsers();
     localStorage.setItem("loggedUser", JSON.stringify(users[currentUser.email]));

@@ -8,32 +8,36 @@ const popup = document.getElementById("popup");
 const index = document.getElementById("index");
 const logout = document.getElementById("logoutBtn");
 
-
 let users;
 
-//EVENT LISTENERS
+//event listener par ver si el usuario ha iniciado sesion y mostrar y ocultar elementos
 
 window.onload = (event) => {
   let logged = localStorage.getItem("loggedUser");
-  if (logged !== null  ) {
+  if (logged !== null) {
     form.classList.add("hidden");
     popup.classList.remove("hidden");
     let logedout = document.querySelectorAll(".logedout");
     let logedin = document.querySelectorAll(".logedin");
-    logedout.forEach((e) => { e.classList.add("closed")});
-    logedin.forEach((e) => { e.classList.remove("closed")});
+    logedout.forEach((e) => {
+      e.classList.add("closed");
+    });
+    logedin.forEach((e) => {
+      e.classList.remove("closed");
+    });
   }
 };
 
 index.addEventListener("click", (e) => {
-    window.location.href = "/Index.html";
+  window.location.href = "/Index.html";
 });
 
 logout.addEventListener("click", (e) => {
-    localStorage.removeItem("loggedUser");
-    location.reload(); 
+  localStorage.removeItem("loggedUser");
+  location.reload();
 });
 
+//event listener del form para hacer las comprobaciones necesarias
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   checkLength(user, 3, 15);
@@ -48,6 +52,7 @@ form.addEventListener("submit", (e) => {
 });
 
 //FUNCIONES DE COMPROBACION
+//mira que los elementos del array que se le pase no esten vacios
 function checkRequired(inputArray) {
   inputArray.forEach((input) => {
     if (input.value.trim() === "") {
@@ -56,6 +61,7 @@ function checkRequired(inputArray) {
   });
 }
 
+//mira que el elemento cumpla el minimo y maximo
 function checkLength(input, min, max) {
   if (input.value.trim().length < min) {
     showError(input, `Tiene que tener un minimo de ${min} caracteres`);
@@ -66,6 +72,7 @@ function checkLength(input, min, max) {
   }
 }
 
+//mira que las dos contraseñas introducidas sea la misma
 function checkSamePassword(input1, input2) {
   if (input1.value !== input2.value) {
     let missatge = `La segunda contraseña no es igual`;
@@ -75,6 +82,7 @@ function checkSamePassword(input1, input2) {
   }
 }
 
+//comprueba con una expresion regular que el email sea valido
 function checkValidEmail(input) {
   const re =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -86,6 +94,7 @@ function checkValidEmail(input) {
   }
 }
 
+//mira que el email no este en uso
 function checkUniqueEmail(input) {
   getUserArray();
   if (users.hasOwnProperty(input.value.trim())) {
@@ -94,6 +103,7 @@ function checkUniqueEmail(input) {
 }
 
 //FUNCIONES PARA MOSTRAR INFORMACION
+//funcion para mostrar un error en un input
 function showError(input, message) {
   const formControl = input.parentElement;
   const small = formControl.querySelector("small");
@@ -101,24 +111,24 @@ function showError(input, message) {
   small.innerHTML = ` ${message}`;
 }
 
+//funcion para mostrar que el input es correcto
 function showCorrect(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control correct";
 }
 
-// function getInputName(input) {
-//   return input.parentElement.querySelector("label").innerText;
-// }
-
 //FUNCIONES PARA EL MANEJO DE USUARIOS
 
+//funcion para actualizar los usuarios en localstorage
 function updateUsers() {
   let json = JSON.stringify(users);
   localStorage.setItem("users", json);
 }
 
+//funcion para cargar los uuarios
 function getUserArray() {
   let json = localStorage.getItem("users");
+  //si no hay objeto en localstorage se crea el objeto
   if (json === null || json === "") {
     localStorage.setItem("users", "{}");
     json = localStorage.getItem("users");
@@ -126,21 +136,28 @@ function getUserArray() {
   users = JSON.parse(json);
 }
 
+//funcion para registrarse
 function register() {
+  //mira que no haya errores con un queryselectorall
   let errors = document.querySelectorAll(".error").length;
   if (errors === 0) {
     getUserArray();
+    //se crea un objeto de usuario
     users[email.value] = {
       email: email.value,
       user: user.value,
       password: password.value,
-      save: null
+      save: null,
     };
+    //se actualizan los usuarios
     updateUsers();
+    //se inicia sesion 
     localStorage.setItem("loggedUser", JSON.stringify(users[email.value]));
     window.location.href = "/Index.html";
   }
 }
 
-document.getElementById("logout").addEventListener("click", () => {   localStorage.removeItem("loggedUser");
-location.reload(); });
+document.getElementById("logout").addEventListener("click", () => {
+  localStorage.removeItem("loggedUser");
+  location.reload();
+});

@@ -21,7 +21,7 @@ function startRiddle(game) {
         getRandomRiddle(difficulty);
       }
       riddle = json[difficulty][game.index];
-      console.log(riddle);
+      console.log(riddle.answer);
       showRiddle(riddle);
     }
 

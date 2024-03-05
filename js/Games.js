@@ -336,7 +336,6 @@ function advanceFlag() {
     openMinigame(currentGame);
     save();
   } else {
-    console.log("ENDED");
     endGame();
   }
 }

@@ -42,9 +42,7 @@ function startColorCombination(game) {
       elcrono = setInterval(() => {
         showColor();
       }, speed);
-      // console.log(getRandom(0,availableColors.length));
       console.log(colorSequence);
-      // console.log(availableColors[getRandom(0,availableColors.length-1)]);
     }
 
     function btnPress(element) {

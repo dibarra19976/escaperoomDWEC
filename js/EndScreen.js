@@ -51,7 +51,6 @@ function addToRanking() {
     localStorage.setItem("loggedUser", JSON.stringify(userLogged));
     localStorage.setItem("rankings", JSON.stringify(rankings));
     localStorage.removeItem("addToRanking");
-    console.log(rankings);
   }
 }
 
@@ -70,7 +69,6 @@ function showRankings() {
     else{
       clase = "";
     }
-    console.log(clase);
     if (element.time.hours < 10) {
       element.time.hours = "0" + element.time.hours;
     }

@@ -134,7 +134,6 @@ function startTiming(game) {
       if (gameElement.classList.contains("green") && !hit) {
         hits++;
         hit = true;
-        console.log(hits);
         if (repeats == hits) {
           finish_Sound();
           clearInterval(elcrono);

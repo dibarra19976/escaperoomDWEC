@@ -6,42 +6,36 @@ function mainMenu_Song() {
   music.setAttribute("src", "/sounds/background/mainmenu.mp3");
   music.loop = true;
   music.play();
-  console.log(music);
 }
 
 function theme1_Song() {
   music.setAttribute("src", "/sounds/background/theme1.mp3");
   music.loop = true;
   music.play();
-  console.log(music);
 }
 
 function theme2_Song() {
   music.setAttribute("src", "/sounds/background/theme2.mp3");
   music.loop = true;
   music.play();
-  console.log(music);
 }
 
 function theme3_Song() {
   music.setAttribute("src", "/sounds/background/theme3.mp3");
   music.loop = true;
   music.play();
-  console.log(music);
 }
 
 function theme4_Song() {
   music.setAttribute("src", "/sounds/background/theme4.mp3");
   music.loop = true;
   music.play();
-  console.log(music);
 }
 
 function end_Song() {
   music.setAttribute("src", "/sounds/background/end.mp3");
   music.loop = false;
   music.play();
-  console.log(music);
 }
 
 function mute_Song() {

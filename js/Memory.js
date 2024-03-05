@@ -44,7 +44,6 @@ function startMemory(game) {
     cardsDiv.innerHTML = str;
 
     const cards = document.querySelectorAll(".card");
-    console.log(cards);
 
     for (let i = 0; i < cards.length; i++) {
       cards[i].addEventListener("click", function () {

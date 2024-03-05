@@ -39,7 +39,6 @@ function newGame(url){
   let logged = localStorage.getItem("loggedUser");
   if (logged !== null) {
     let save = JSON.parse(logged).save;
-    console.log(save);
     if(save !== null){
       overwriteSavePopUp(url);
     }

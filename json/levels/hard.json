@@ -1,67 +1,81 @@
 {
-  "games":  [
+  "games": [
     {
       "id": 0,
       "type": "text",
-      "content": "Hoy te toca volver a hacer tu trabajo.\n\n Esta vez, parece que estais trabajanado en una zona urbana. \n\n Puede que te paguen menos, pero al menos  estás relativamente a salvo.",
+      "content": "Hoy te toca volver a hacer tu trabajo.\n\n Esta vez, parece que estais trabajanado en una zona urbana.",
       "beaten": false
     },
     {
       "id": 1,
       "type": "text",
-      "content": "Gracias a las cámaras que lleva el equipo de expedición, puedes observar el sitio de las instalaciones.\n\n Esta vez, parece un templo perdido dentro de una cueva con algo de luz.",
+      "content": "Tu equipo te ha comunicado que ya puedes empezar a abrir las puertas.",
       "beaten": false
     },
     {
       "id": 2,
-      "type": "text",
-      "content": "Ahora ya puedes empezar con tu trabajo y desbloquar las puertas.",
-      "beaten": false
-    },
-    {
-      "id": 3,
-      "type": "timing",
-      "difficulty": 1,
+      "type": "memory",
+      "difficulty": 7,
       "beaten": false,
       "state": null
     },
     {
-      "id": 4,
+      "id": 3,
       "type": "riddle",
       "beaten": false,
-      "difficulty": 1,
+      "difficulty": 3,
       "hintUsed": false,
       "index": null
     },
     {
-      "id": 5,
+      "id": 4,
       "type": "text",
-      "content": "¡Has conseguido abrir una puerta! Pero aun queda una por abrir.",
+      "content": "¡Has conseguido abrir una puerta!",
       "beaten": false
     },
-    
     {
-      "id": 3,
+      "id": 5,
       "type": "timing",
-      "difficulty": 2,
+      "difficulty": 3,
       "beaten": false,
       "state": null
     },
     {
-      "id": 4,
+      "id": 6,
       "type": "riddle",
       "beaten": false,
-      "difficulty": 2,
+      "difficulty": 3,
       "hintUsed": false,
       "index": null
     },
     {
-      "id": 5,
+      "id": 7,
       "type": "text",
-      "content": "¡Has conseguido abrir las dos puertas! \n\n ¡Felicidades!",
+      "content": "¡Has conseguido abrir las segunda puerta! \n\n Pero esta vez parece que aun quedan mas.",
+      "beaten": false
+    },
+    {
+      "id": 8,
+      "type": "memory",
+      "difficulty": 10,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 9,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 3,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "content": "¡Has conseguido abrir todas las puertas! \n\n ¡Felicidades!",
       "beaten": false
     }
   ],
-  "background" : "/img/background2.png",
-  "music" : "theme1_Song();"
+  "background": "/img/background2.png",
+  "music": "theme2_Song();"
 }

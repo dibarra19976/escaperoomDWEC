@@ -1,9 +1,13 @@
+let json = {};
+loadDoc((response) => {
+  json = JSON.parse(response);
+}, "/json/riddles.json");
+
 function startRiddle(game) {
   if (!game.beaten) {
     closeEndedPopup();
     let attempts = 1;
-    let json;
-    let riddle;
+    let riddle = "";
     let difficulty = game.difficulty;
     let id = game.id;
 
@@ -57,7 +61,7 @@ function startRiddle(game) {
     }
 
     function getRandomRiddle(difficulty) {
-      game.index = getRandom(0, json[difficulty].length);
+      game.index = getRandom(0, json[difficulty].length-1);
     }
 
     function getRandom(min, max) {

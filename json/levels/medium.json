@@ -22,8 +22,7 @@
       "id": 3,
       "type": "timing",
       "difficulty": 1,
-      "beaten": false,
-      "state": null
+      "beaten": false
     },
     {
       "id": 4,
@@ -41,14 +40,13 @@
     },
     
     {
-      "id": 3,
+      "id": 6,
       "type": "timing",
       "difficulty": 2,
-      "beaten": false,
-      "state": null
+      "beaten": false
     },
     {
-      "id": 4,
+      "id": 7,
       "type": "riddle",
       "beaten": false,
       "difficulty": 2,
@@ -56,12 +54,12 @@
       "index": null
     },
     {
-      "id": 5,
+      "id": 8,
       "type": "text",
       "content": "¡Has conseguido abrir las dos puertas! \n\n ¡Felicidades!",
       "beaten": false
     }
   ],
-  "background" : "/img/background2.png",
+  "background" : "/img/background1.png",
   "music" : "theme1_Song();"
 }

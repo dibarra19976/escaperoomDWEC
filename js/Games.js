@@ -233,11 +233,21 @@ function updateScore(num) {
 //FUNCION PARA CARGAR FICHEROS JSON O TXT MEDIANTE AJAX
 function loadDoc(callback, file) {
   const xhttp = new XMLHttpRequest();
+
   xhttp.onload = function () {
     if (callback && typeof callback === "function") {
       callback(this.responseText);
     }
   };
+
+  xhttp.onerror = function () {
+    console.error("Error al cargar el archivo:", file);
+    // Intentar cargar de nuevo después de 3 segundos
+    setTimeout(function () {
+      loadDoc(callback, file);
+    }, 3000);
+  };
+
   xhttp.open("GET", file, true);
   xhttp.send();
 }
@@ -373,11 +383,10 @@ function loadSave() {
     let user = JSON.parse(logged);
     let userSpan = document.getElementById("player").querySelector("span");
     userSpan.innerText = user.user;
-    score = user.save.score;
     globalUrl = user.save.level;
     currentGame = user.save.currentFlag;
     loadTimeChrono(user.save.time);
-    updateScore(score);
+    updateScore(user.save.score);
     loadLevel(globalUrl);
   }
 }

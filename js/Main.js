@@ -62,6 +62,7 @@ function anonymousPopUpHide(){
   let quit = document.getElementById("anonymousUser");
   quit.classList.add("closed");
   quit.classList.remove("fadeIn");
+  select_Sound();
 }
 
 function overwriteSavePopUp(url){
@@ -75,6 +76,7 @@ function overwriteSavePopUpHide(){
   let quit = document.getElementById("overwriteSave");
   quit.classList.add("closed");
   quit.classList.remove("fadeIn");
+  select_Sound();
 }
 
 function newGameLoad(url){
@@ -88,11 +90,12 @@ function newGameLoad(url){
     localStorage.setItem("users", JSON.stringify(allusers));
     localStorage.setItem("loggedUser", JSON.stringify(userLogged));
   }
-  location.href = "/html/Game.html";
+  setTimeout(()=>{  location.href = "/html/Game.html";},700);
 }
 
 function continueGame(){
-  location.href = "/html/Game.html";
+  setTimeout(()=>{  location.href = "/html/Game.html";},700);
+
 }
 
 mainMenu_Song();

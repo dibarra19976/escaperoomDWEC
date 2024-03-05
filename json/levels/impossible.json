@@ -1,0 +1,78 @@
+{
+  "games": [
+    {
+      "id": 0,
+      "type": "colors",
+      "difficulty": 8,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 1,
+      "type": "timing",
+      "difficulty": 4,
+      "beaten": false
+    },
+    {
+      "id": 2,
+      "type": "memory",
+      "difficulty": 22,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 3,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 4,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 5,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 6,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 7,
+      "type": "memory",
+      "difficulty": 22,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 8,
+      "type": "timing",
+      "difficulty": 4,
+      "beaten": false
+    },
+    {
+      "id": 9,
+      "type": "colors",
+      "difficulty": 8,
+      "beaten": false,
+      "state": null
+    }
+  ],
+  "background": "/img/background4.png",
+  "music": "theme4_Song();"
+}

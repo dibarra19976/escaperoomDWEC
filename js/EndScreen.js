@@ -2,6 +2,25 @@ let rankings = {};
 let newScore = {};
 let gameURL = "";
 
+window.onload = (event) => {
+  let logged = localStorage.getItem("loggedUser");
+  if (logged !== null) {
+    let logedout = document.querySelectorAll(".logedout");
+    let logedin = document.querySelectorAll(".logedin");
+    logedout.forEach((e) => {
+      e.classList.add("closed");
+    });
+    logedin.forEach((e) => {
+      e.classList.remove("closed");
+    });
+    let save = JSON.parse(logged).save;
+    if(save != null){
+      document.getElementById("continue").classList.remove("closed");
+      
+    }
+  }
+};
+
 function addToRanking() {
   if (localStorage.getItem("addToRanking") === "true") {
     let ranking = localStorage.getItem("rankings");
@@ -36,14 +55,22 @@ function addToRanking() {
   }
 }
 
-function enseñarRankings() {
+function showRankings() {
   gameURL = localStorage.getItem("gameURL");
   let table = document.getElementById("table");
   let num = 1;
   let ranking = localStorage.getItem("rankings");
+  let clase = "";
   rankings = JSON.parse(ranking);
   rankings[gameURL].sort(compareObjects);
   rankings[gameURL].forEach((element) => {
+    if ((JSON.stringify(element) === JSON.stringify(newScore))){
+      clase = "current";
+    }
+    else{
+      clase = "";
+    }
+    console.log(clase);
     if (element.time.hours < 10) {
       element.time.hours = "0" + element.time.hours;
     }
@@ -53,22 +80,17 @@ function enseñarRankings() {
     if (element.time.seconds < 10) {
       element.time.seconds = "0" + element.time.seconds;
     }
-    console.log(newScore);
-    console.log(element);
     table.innerHTML += `
-    <tr class="${(JSON.stringify(element) === JSON.stringify(newScore)) ? 'current' : ' '}">
+    <tr class="${clase}">
     <td>${num}</td>
     <td>${element.user}</td>
     <td>${element.score}</td>
     <td>${element.time.hours}:${element.time.minutes}:${element.time.seconds}</td>
   </tr>`;
     num++;
-    console.log(element);
   });
 }
 
-//comparar con stringify para sacara la puntuacoin actual
-//ordenar
 //añadir boton de vuelta al inicio
 //añadir el codigo del navbar de inicio
 
@@ -104,5 +126,5 @@ function compareObjects(a, b) {
 
 end_Song();
 addToRanking();
-enseñarRankings();
+showRankings();
 

@@ -51,13 +51,26 @@
       <div class="logo"><img src="/img/LOGO.png" alt="Logo" id="logo" /></div>
       <div class="menu">
         <ul>
-          <li id="continue" class="closed" class="continue" onclick="continueGame()">Continuar</li>
+          <li
+            id="continue"
+            class="closed"
+            class="continue"
+            onclick="continueGame()"
+          >
+            Continuar
+          </li>
           <li onclick="newGame('/json/levels/medium.json')">
             Jugar el nivel 1 (Normal)
           </li>
-          <li>Jugar el nivel 2 (Dificil)</li>
-          <li>Jugar el nivel 3 (Extremo)</li>
-          <li>Creditos & mas info</li>
+          <li onclick="newGame('/json/levels/hard.json')">
+            Jugar el nivel 2 (Dificil)
+          </li>
+          <li onclick="newGame('/json/levels/extreme.json')">
+            Jugar el nivel 3 (Extremo)
+          </li>
+          <li onclick="newGame('/json/levels/impossible.json')">
+            Jugar el nivel especial (Imposible)
+          </li>
         </ul>
       </div>
     </div>

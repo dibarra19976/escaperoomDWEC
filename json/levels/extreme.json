@@ -1,40 +1,98 @@
 {
-  "games": {
-    "1": {
+  "games":  [
+    {
+      "id": 0,
+      "type": "text",
+      "content": "Esta vez parece que os ha tocado volver a una de las instalaciones en las que ya habeis trabajado. \n\n Aun quedaba una parte profunda que explorar",
+      "beaten": false
+    },
+    {
       "id": 1,
-      "type": "memory",
-      "difficulty": 5,
+      "type": "text",
+      "content": "Tu equipo ya se ha adentrado y te han dado la señal para que empieces.",
+      "beaten": false
+    },
+    {
+      "id": 2,
+      "type": "colors",
+      "difficulty": 1,
       "beaten": false,
       "state": null
     },
-    "2": {
-      "id": 2,
+    {
+      "id": 3,
+      "type": "text",
+      "content": "Parece que la señal es muy debil y ha habido un fallo al intentar abrir la puerta...\n\nVuelves a intentar abrirla modificando un poco los ajustes de tu conexion y parece que ya funciona correctamente.",
+      "beaten": false
+    },
+    {
+      "id": 4,
+      "type": "colors",
+      "difficulty": 6,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 5,
+      "type": "timing",
+      "difficulty": 3,
+      "beaten": false
+    },
+    {
+      "id": 6,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "content": "¡Has conseguido abrir una puerta!\n\nPero aun te queda trabajo por hacer.",
+      "beaten": false
+    },
+    {
+      "id": 8,
+      "type": "memory",
+      "difficulty": 11,
+      "beaten": false,
+      "state": null
+    },
+    {
+      "id": 9,
       "type": "timing",
       "difficulty": 4,
       "beaten": false
     },
-    "3": {
-      "id": 3,
-      "type": "colors",
-      "difficulty": 4,
+    {
+      "id": 10,
+      "type": "text",
+      "content": "¡Has conseguido abrir la segunda puerta! ",
       "beaten": false
     },
-    "4": {
-      "id": 4,
-      "type": "riddle",
-      "difficulty": 4,
-      "beaten": false,
-      "hintUsed" : false
-    }
-  },
-  "flags": [
     {
-      "type": "game",
-      "id": 1
+      "id": 11,
+      "type": "memory",
+      "difficulty": 11,
+      "beaten": false,
+      "state": null
     },
     {
+      "id": 12,
+      "type": "riddle",
+      "beaten": false,
+      "difficulty": 4,
+      "hintUsed": false,
+      "index": null
+    },
+    {
+      "id": 13,
       "type": "text",
-      "text": "TextoTextoTextoTexto"
+      "content": "¡Has conseguido abrir todas las puertas! \n\n ¡Felicidades!",
+      "beaten": false
     }
-  ]
+  ],
+  "background" : "/img//background3.png",
+  "music" : "theme3_Song();"
 }
